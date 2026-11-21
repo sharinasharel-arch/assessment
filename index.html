@@ -1,0 +1,2873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADJECTIVE QUEST – THE PERFECT SWAN | Royal Assessment</title>
+  <!-- Google Fonts: Regal Serif & Friendly Year 6 Rounded Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Nunito:wght@500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & FANTASY CHINESE PALACE THEME
+       ========================================================================== */
+    :root {
+      --burgundy-deep: #1E050D;
+      --maroon-dark: #2B0712;
+      --maroon-main: #4A0E1E;
+      --maroon-rich: #68142B;
+      --purple-twilight: #240A2E;
+      --sunset-magenta: #8E244D;
+
+      --gold-royal: #D4AF37;
+      --gold-bright: #F7DC6F;
+      --gold-shimmer: #FFF0A5;
+      --gold-bronze: #8C6214;
+
+      --blossom-pink: #FFB7C5;
+      --blossom-deep: #F48FB1;
+      --cream-soft: #FFFDF7;
+      --ivory-warm: #F8F1E5;
+      --ivory-muted: #E6D7C3;
+
+      --emerald-glow: #2ECC71;
+      --emerald-dark: #145A32;
+      --crimson-glow: #FF5252;
+      --crimson-dark: #641E16;
+
+      --font-display: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+      --font-serif: 'Cinzel', Georgia, serif;
+      --font-body: 'Nunito', 'Quicksand', sans-serif;
+
+      --shadow-gold: 0 0 22px rgba(212, 175, 55, 0.35), 0 10px 30px rgba(15, 2, 7, 0.65);
+      --shadow-card: 0 16px 42px rgba(12, 2, 6, 0.75), inset 0 0 0 1px rgba(247, 220, 111, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cream-soft);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 82% 14%, rgba(247, 220, 111, 0.22) 0%, rgba(247, 220, 111, 0) 28%),
+        radial-gradient(circle at 18% 25%, rgba(255, 183, 197, 0.16) 0%, rgba(255, 183, 197, 0) 35%),
+        linear-gradient(165deg, #190722 0%, #3A0A1D 38%, #5E132D 72%, #2B0712 100%);
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
+
+    /* Animated Petal & Firefly Background Canvas */
+    #ambient-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Subtle Chinese Lattice Pattern Overlay */
+    .palace-lattice-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.055;
+      background-image:
+        radial-gradient(circle at 50% 50%, #F7DC6F 1.5px, transparent 1.5px),
+        linear-gradient(45deg, transparent 48%, #D4AF37 49%, #D4AF37 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, #D4AF37 49%, #D4AF37 51%, transparent 52%);
+      background-size: 48px 48px;
+    }
+
+    /* ==========================================================================
+       2. TOP NAVIGATION BAR (MATCHING EXISTING WEBSITE STRUCTURE)
+       ========================================================================== */
+    .royal-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(180deg, #380816 0%, #27050F 100%);
+      border-bottom: 3px double var(--gold-royal);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65), 0 0 18px rgba(212, 175, 55, 0.25);
+      padding: 0.65rem 1.25rem;
+    }
+
+    .nav-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .swan-emblem {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #68142B, #2B0712);
+      border: 2px solid var(--gold-bright);
+      box-shadow: 0 0 14px rgba(247, 220, 111, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.35s ease;
+    }
+
+    .brand-group:hover .swan-emblem {
+      transform: scale(1.07) rotate(-4deg);
+    }
+
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: clamp(0.95rem, 1.45vw, 1.28rem);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      background: linear-gradient(90deg, #FFF3B0 0%, #F7DC6F 45%, #D4AF37 75%, #FFF3B0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
+      color: var(--blossom-pink);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+      list-style: none;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.48rem 0.85rem;
+      border-radius: 999px;
+      border: 1.5px solid rgba(212, 175, 55, 0.65);
+      background: rgba(74, 14, 30, 0.75);
+      color: var(--ivory-warm);
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--gold-bright);
+      flex-shrink: 0;
+    }
+
+    .nav-btn:hover {
+      background: linear-gradient(135deg, #68142B, #8E244D);
+      border-color: var(--gold-bright);
+      color: #FFFFFF;
+      box-shadow: 0 0 15px rgba(247, 220, 111, 0.65);
+      transform: translateY(-2px);
+    }
+
+    /* ACTIVE PAGE: ASSESSMENT */
+    .nav-btn.active {
+      background: linear-gradient(135deg, #F7DC6F 0%, #D4AF37 60%, #B8860B 100%);
+      color: #2B0712;
+      border: 2px solid #FFF8D6;
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(247, 220, 111, 0.85), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn.active svg {
+      stroke: #2B0712;
+    }
+
+    /* Audio Control Button */
+    .audio-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.48rem 0.85rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--blossom-pink);
+      background: rgba(36, 10, 46, 0.85);
+      color: var(--blossom-pink);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .audio-toggle-btn:hover {
+      box-shadow: 0 0 14px rgba(255, 183, 197, 0.6);
+      background: rgba(94, 19, 45, 0.9);
+      color: #fff;
+    }
+
+    .audio-toggle-btn.playing {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      box-shadow: 0 0 14px rgba(247, 220, 111, 0.45);
+    }
+
+    /* ==========================================================================
+       3. MAIN CONTAINER & ORNATE ROYAL PANELS
+       ========================================================================== */
+    .main-wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: 1.75rem auto 3.5rem;
+      padding: 0 1.15rem;
+    }
+
+    .view-section {
+      display: none;
+      animation: fadeSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.99);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .royal-card {
+      position: relative;
+      background: linear-gradient(160deg, rgba(64, 12, 27, 0.92) 0%, rgba(36, 6, 16, 0.96) 100%);
+      border: 2px solid var(--gold-royal);
+      border-radius: 26px;
+      box-shadow: var(--shadow-card);
+      padding: 2.2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Decorative Gold Corner Filigree */
+    .royal-card::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(247, 220, 111, 0.32);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       4. ASSESSMENT LANDING PAGE ("THE ROYAL ASSESSMENT CHALLENGE")
+       ========================================================================== */
+    .hero-header {
+      text-align: center;
+      margin-bottom: 1.65rem;
+    }
+
+    .royal-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.38rem 1.1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.18), rgba(255, 183, 197, 0.22), rgba(212, 175, 55, 0.18));
+      border: 1px solid var(--gold-bright);
+      color: var(--gold-bright);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.8vw, 2.85rem);
+      font-weight: 900;
+      line-height: 1.18;
+      background: linear-gradient(180deg, #FFFBE0 0%, #F7DC6F 52%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.65));
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2vw, 1.42rem);
+      color: var(--blossom-pink);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    /* Hero Panorama Illustration Frame */
+    .hero-illustration-frame {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto 1.75rem;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 3px solid var(--gold-bright);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 14px 35px rgba(0, 0, 0, 0.7);
+      background: #1B0624;
+    }
+
+    .hero-illustration-frame svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .welcome-text {
+      max-width: 780px;
+      margin: 0 auto 1.8rem;
+      text-align: center;
+      font-size: 1.12rem;
+      color: var(--ivory-warm);
+      line-height: 1.75;
+    }
+
+    /* Golden Mission Instruction Panel */
+    .mission-panel {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      background: linear-gradient(135deg, rgba(255, 248, 225, 0.1) 0%, rgba(212, 175, 55, 0.16) 100%);
+      border: 2px solid var(--gold-bright);
+      border-radius: 20px;
+      padding: 1.5rem 1.85rem;
+      box-shadow: inset 0 0 22px rgba(247, 220, 111, 0.15);
+    }
+
+    .mission-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--gold-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.85rem 1.4rem;
+      list-style: none;
+    }
+
+    .mission-grid li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: rgba(43, 7, 18, 0.65);
+      padding: 0.7rem 1rem;
+      border-radius: 14px;
+      border: 1px solid rgba(247, 220, 111, 0.35);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--cream-soft);
+    }
+
+    .mission-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F7DC6F, #D4AF37);
+      color: #2B0712;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* Stages Preview Strip */
+    .stages-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      max-width: 820px;
+      margin: 0 auto 2rem;
+    }
+
+    .stage-mini-card {
+      background: rgba(30, 5, 13, 0.72);
+      border: 1.5px solid rgba(255, 183, 197, 0.45);
+      border-radius: 16px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stage-mini-card span {
+      display: block;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--blossom-pink);
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .stage-mini-card strong {
+      font-family: var(--font-serif);
+      color: var(--gold-bright);
+      font-size: 0.98rem;
+    }
+
+    /* Pupil Name Entry & Start Button */
+    .start-box {
+      max-width: 540px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .name-label {
+      display: block;
+      font-weight: 800;
+      color: var(--gold-bright);
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .name-input {
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border-radius: 999px;
+      border: 2px solid var(--gold-royal);
+      background: rgba(255, 253, 247, 0.96);
+      color: #2B0712;
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+      outline: none;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      transition: all 0.25s ease;
+    }
+
+    .name-input:focus {
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 22px rgba(247, 220, 111, 0.75);
+    }
+
+    .saved-score-banner {
+      display: none;
+      margin-bottom: 1.15rem;
+      padding: 0.65rem 1rem;
+      border-radius: 14px;
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px dashed var(--gold-bright);
+      color: var(--gold-shimmer);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    /* Regal Primary Action Buttons */
+    .btn-royal-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 1rem 2.35rem;
+      border-radius: 999px;
+      border: 2px solid #FFF8D6;
+      background: linear-gradient(135deg, #F7DC6F 0%, #D4AF37 55%, #B28215 100%);
+      color: #2B0712;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(247, 220, 111, 0.65), 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.28s ease;
+    }
+
+    .btn-royal-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 34px rgba(247, 220, 111, 0.95), 0 12px 26px rgba(0, 0, 0, 0.6);
+      filter: brightness(1.06);
+    }
+
+    .btn-royal-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-royal-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 999px;
+      border: 2px solid var(--gold-royal);
+      background: linear-gradient(135deg, #5A1126, #360816);
+      color: var(--gold-bright);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      transition: all 0.25s ease;
+    }
+
+    .btn-royal-secondary:hover:not(:disabled) {
+      border-color: var(--gold-bright);
+      background: linear-gradient(135deg, #781733, #4A0E1E);
+      box-shadow: 0 0 18px rgba(247, 220, 111, 0.55);
+      transform: translateY(-2px);
+    }
+
+    .btn-royal-secondary:disabled {
+      opacity: 0.42;
+      cursor: not-allowed;
+    }
+
+    /* ==========================================================================
+       5. QUIZ HUD & INTERACTIVE QUESTION STAGE
+       ========================================================================== */
+    .quiz-hud {
+      background: linear-gradient(135deg, rgba(35, 6, 15, 0.95), rgba(68, 13, 30, 0.92));
+      border: 2px solid var(--gold-royal);
+      border-radius: 20px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.35rem;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .hud-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .stage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.42rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #68142B, #8E244D);
+      border: 1.5px solid var(--gold-bright);
+      color: var(--gold-shimmer);
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hud-stats {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hud-pill {
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(25, 4, 11, 0.85);
+      border: 1px solid rgba(247, 220, 111, 0.45);
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--ivory-warm);
+    }
+
+    .hud-pill strong {
+      color: var(--gold-bright);
+    }
+
+    /* Golden Progress Track */
+    .progress-track {
+      position: relative;
+      width: 100%;
+      height: 14px;
+      background: rgba(18, 3, 8, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      overflow: visible;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 6.66%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #F48FB1 0%, #D4AF37 50%, #FFF3B0 100%);
+      box-shadow: 0 0 14px rgba(247, 220, 111, 0.8);
+      transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .progress-swan-marker {
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #FFFDF7;
+      border: 2px solid var(--gold-royal);
+      box-shadow: 0 0 10px rgba(247, 220, 111, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* Stage Transition Banner */
+    .stage-banner {
+      display: none;
+      text-align: center;
+      padding: 0.85rem 1.2rem;
+      margin-bottom: 1.2rem;
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.2), rgba(255, 183, 197, 0.25), rgba(212, 175, 55, 0.2));
+      border: 1.5px solid var(--gold-bright);
+      color: var(--gold-shimmer);
+      font-weight: 800;
+      animation: pulseGlow 2s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from { box-shadow: 0 0 10px rgba(247, 220, 111, 0.25); }
+      to { box-shadow: 0 0 22px rgba(247, 220, 111, 0.6); }
+    }
+
+    /* Question Layout Grid */
+    .question-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 1.85rem;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .question-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Gold-Framed Question Visual Card */
+    .visual-scene-card {
+      position: relative;
+      border-radius: 22px;
+      padding: 10px;
+      background: linear-gradient(145deg, #F7DC6F 0%, #996515 50%, #F7DC6F 100%);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65), 0 0 22px rgba(212, 175, 55, 0.35);
+    }
+
+    .visual-scene-inner {
+      border-radius: 15px;
+      overflow: hidden;
+      background: #1C0624;
+      position: relative;
+    }
+
+    .visual-scene-inner svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .visual-caption {
+      text-align: center;
+      padding: 0.55rem 0.75rem;
+      background: rgba(34, 6, 15, 0.94);
+      color: var(--blossom-pink);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-top: 1px solid rgba(247, 220, 111, 0.35);
+    }
+
+    /* Question Content Side */
+    .q-type-tag {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 183, 197, 0.16);
+      border: 1px solid var(--blossom-pink);
+      color: var(--blossom-pink);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .q-prompt {
+      font-size: clamp(1.22rem, 2.1vw, 1.5rem);
+      font-weight: 800;
+      color: var(--cream-soft);
+      line-height: 1.45;
+      margin-bottom: 1rem;
+    }
+
+    .q-sentence-box {
+      background: rgba(255, 253, 247, 0.08);
+      border-left: 4px solid var(--gold-bright);
+      border-radius: 12px;
+      padding: 0.9rem 1.15rem;
+      margin-bottom: 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-shimmer);
+      line-height: 1.55;
+    }
+
+    /* Answer Options Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .options-grid.two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 520px) {
+      .options-grid.two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.95rem 1.2rem;
+      border-radius: 16px;
+      border: 2px solid rgba(212, 175, 55, 0.55);
+      background: linear-gradient(135deg, rgba(74, 14, 30, 0.88), rgba(43, 7, 18, 0.94));
+      color: var(--cream-soft);
+      font-family: var(--font-body);
+      font-size: 1.06rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--gold-bright);
+      background: linear-gradient(135deg, #741631, #4A0E1E);
+      box-shadow: 0 0 18px rgba(247, 220, 111, 0.45);
+      transform: translateX(4px);
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .option-letter {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1.5px solid var(--gold-bright);
+      color: var(--gold-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-weight: 800;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    /* Correct & Incorrect Feedback States */
+    .option-btn.correct {
+      background: linear-gradient(135deg, #196F3D, #0E4224) !important;
+      border-color: #58D68D !important;
+      box-shadow: 0 0 22px rgba(46, 204, 113, 0.65) !important;
+      color: #FFFFFF !important;
+      animation: bouncePop 0.45s ease;
+    }
+
+    .option-btn.correct .option-letter {
+      background: #2ECC71;
+      border-color: #FFF;
+      color: #0B331B;
+    }
+
+    .option-btn.incorrect {
+      background: linear-gradient(135deg, #78281F, #4A120D) !important;
+      border-color: #FF6B6B !important;
+      box-shadow: 0 0 18px rgba(255, 82, 82, 0.55) !important;
+      color: #FFD6D6 !important;
+      animation: gentleShake 0.4s ease;
+    }
+
+    .option-btn.incorrect .option-letter {
+      background: #FF5252;
+      border-color: #FFF;
+      color: #fff;
+    }
+
+    @keyframes bouncePop {
+      0% { transform: scale(1); }
+      45% { transform: scale(1.025); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes gentleShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    /* Immediate Feedback Panel */
+    .feedback-box {
+      display: none;
+      margin-top: 1.2rem;
+      padding: 1.1rem 1.3rem;
+      border-radius: 16px;
+      animation: fadeSlideUp 0.35s ease forwards;
+    }
+
+    .feedback-box.show {
+      display: block;
+    }
+
+    .feedback-box.is-correct {
+      background: rgba(20, 90, 50, 0.45);
+      border: 1.5px solid #58D68D;
+    }
+
+    .feedback-box.is-wrong {
+      background: rgba(120, 40, 31, 0.5);
+      border: 1.5px solid #FF8A80;
+    }
+
+    .feedback-heading {
+      font-weight: 800;
+      font-size: 1.08rem;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feedback-box.is-correct .feedback-heading {
+      color: #82E0AA;
+    }
+
+    .feedback-box.is-wrong .feedback-heading {
+      color: #FFAB91;
+    }
+
+    .feedback-explanation {
+      font-size: 0.98rem;
+      color: var(--cream-soft);
+      line-height: 1.55;
+    }
+
+    /* Quiz Navigation Footer */
+    .quiz-nav-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(247, 220, 111, 0.25);
+    }
+
+    /* ==========================================================================
+       6. FINAL RESULTS PAGE & REVIEW MODAL/SECTION
+       ========================================================================== */
+    .results-header {
+      text-align: center;
+      margin-bottom: 1.6rem;
+    }
+
+    .results-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      background: linear-gradient(180deg, #FFFBE0 0%, #F7DC6F 55%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.4rem;
+    }
+
+    .celebration-stage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      align-items: center;
+      margin-bottom: 1.8rem;
+    }
+
+    @media (max-width: 820px) {
+      .celebration-stage {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .badge-showcase {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 22px;
+      background: radial-gradient(circle at 50% 35%, rgba(247, 220, 111, 0.22), rgba(30, 5, 13, 0.85));
+      border: 2px solid var(--gold-bright);
+      box-shadow: 0 0 28px rgba(247, 220, 111, 0.35);
+    }
+
+    .achievement-rank-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--blossom-pink);
+      font-weight: 800;
+      margin-top: 0.75rem;
+    }
+
+    .achievement-rank-title {
+      font-family: var(--font-display);
+      font-size: 1.48rem;
+      color: var(--gold-bright);
+      margin: 0.25rem 0 0.65rem;
+    }
+
+    .score-big-display {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 900;
+      color: #FFFDF7;
+      text-shadow: 0 0 18px rgba(247, 220, 111, 0.75);
+    }
+
+    .score-big-display span {
+      font-size: 1.25rem;
+      color: var(--gold-bright);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+      margin-top: 1.15rem;
+    }
+
+    .stat-box {
+      background: rgba(43, 7, 18, 0.85);
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+      border-radius: 16px;
+      padding: 0.85rem;
+      text-align: center;
+    }
+
+    .stat-box .stat-val {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--gold-bright);
+      display: block;
+    }
+
+    .stat-box .stat-lbl {
+      font-size: 0.82rem;
+      color: var(--ivory-muted);
+      font-weight: 700;
+    }
+
+    .personal-message-box {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 1.8rem;
+      padding: 1.2rem 1.5rem;
+      border-radius: 18px;
+      background: rgba(255, 183, 197, 0.12);
+      border: 1.5px solid var(--blossom-pink);
+      font-size: 1.08rem;
+      color: var(--cream-soft);
+      font-weight: 600;
+    }
+
+    .results-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* Review Answers Accordion/List */
+    .review-panel {
+      display: none;
+      margin-top: 2rem;
+      padding-top: 1.75rem;
+      border-top: 2px dashed rgba(247, 220, 111, 0.45);
+    }
+
+    .review-panel.open {
+      display: block;
+      animation: fadeSlideUp 0.4s ease forwards;
+    }
+
+    .review-heading {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--gold-bright);
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .review-item {
+      background: rgba(28, 5, 12, 0.85);
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      border-radius: 16px;
+      padding: 1.15rem 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-item.rev-correct {
+      border-left: 6px solid #2ECC71;
+    }
+
+    .review-item.rev-wrong {
+      border-left: 6px solid #FF5252;
+    }
+
+    .review-q-title {
+      font-weight: 800;
+      color: var(--cream-soft);
+      margin-bottom: 0.45rem;
+      font-size: 1.03rem;
+    }
+
+    .review-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.45rem;
+    }
+
+    /* Custom Royal Toast Notification for Nav Links / Alerts */
+    .royal-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      max-width: 360px;
+      background: linear-gradient(135deg, #4A0E1E, #240610);
+      border: 2px solid var(--gold-bright);
+      border-radius: 18px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75), 0 0 20px rgba(247, 220, 111, 0.45);
+      color: var(--cream-soft);
+      transform: translateY(140%);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .royal-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .royal-toast-title {
+      font-family: var(--font-serif);
+      color: var(--gold-bright);
+      font-weight: 800;
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .royal-card {
+        padding: 1.35rem 1.05rem;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .brand-group {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Falling Cherry Blossom Petals & Golden Fireflies Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="palace-lattice-bg"></div>
+
+  <!-- ========================================================================
+       TOP NAVIGATION BAR (7 EXACT ITEMS + ACTIVE ASSESSMENT HIGHLIGHT)
+       ======================================================================== -->
+  <header class="royal-navbar">
+    <div class="nav-container">
+      <!-- Left: White Swan Logo + Title -->
+      <div class="brand-group" onclick="returnToLanding()" title="Adjective Quest – The Perfect Swan">
+        <div class="swan-emblem">
+          <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Golden Crown -->
+            <path d="M24 14L27 8L32 12L37 8L40 14H24Z" fill="#F7DC6F" stroke="#996515" stroke-width="1.2"/>
+            <circle cx="27" cy="7.5" r="1.5" fill="#FF6B8B"/>
+            <circle cx="32" cy="11" r="1.5" fill="#FFF"/>
+            <circle cx="37" cy="7.5" r="1.5" fill="#FF6B8B"/>
+            <!-- White Swan Body & Graceful Neck -->
+            <path d="M35 17C38 17 40 20 39 24C38 28 33 32 34 37C35 41 42 40 48 37C51 35.5 54 37 52 41C49 47 40 51 29 51C19 51 13 46 14 40C15 35 21 34 25 36C27 32 29 26 30 21C31 18 33 17 35 17Z" fill="#FFFDF7" stroke="#D4AF37" stroke-width="1.5"/>
+            <!-- Wing Feather Detail -->
+            <path d="M21 41C26 39 34 39 41 42C36 46 26 46 21 41Z" fill="#F4E6D4" stroke="#D4AF37" stroke-width="1"/>
+            <!-- Swan Beak & Eye -->
+            <path d="M39 20L44 21.5L39 23Z" fill="#F39C12"/>
+            <circle cx="36.5" cy="20.5" r="1.2" fill="#2B0712"/>
+          </svg>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="brand-title">ADJECTIVE QUEST – THE PERFECT SWAN</span>
+          <span class="brand-subtitle">Year 6 Royal English Adventure</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links in Exact Requested Order -->
+      <nav aria-label="Main Website Navigation">
+        <ul class="nav-links">
+          <li>
+            <button type="button" class="nav-btn" onclick="handleNavClick('Home', 'Welcome gate to the Imperial Swan Palace & story prologue.')">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Home
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" onclick="handleNavClick('Teaching', 'Teacher guide, Year 6 ESL curriculum standards & lesson notes.')">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Teaching
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" onclick="handleNavClick('Learning', 'Interactive grammar scrolls on descriptive, comparative & superlative adjectives.')">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              Learning
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" onclick="handleNavClick('Learning Activities', 'Practice worksheets, lantern matching & cherry blossom word sorting.')">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Learning Activities
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn active" aria-current="page" onclick="returnToLanding()">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l-3.5 2 1-4L6 10l4.2-.3L12 6l1.8 3.7L18 10l-3.5 3 1 4z"/><circle cx="12" cy="12" r="10"/></svg>
+              Assessment
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" onclick="handleNavClick('Reflection/References', 'Pupil self-reflection journal & academic ESL references.')">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Reflection/References
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" onclick="startQuizDirectly()">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="6"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1"/><circle cx="18" cy="13" r="1"/></svg>
+              Play the Game
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Gentle Palace Harp/Guzheng Music Toggle -->
+      <button type="button" id="audio-btn" class="audio-toggle-btn" onclick="toggleAudio()" title="Toggle Gentle Palace Music & Sound Effects">
+        <span id="audio-icon">🔇</span>
+        <span id="audio-label">Palace Music: Off</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN CONTENT AREA
+       ======================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- ======================================================================
+         VIEW 1: ASSESSMENT LANDING PAGE ("THE ROYAL ASSESSMENT CHALLENGE")
+         ====================================================================== -->
+    <section id="landing-view" class="view-section active">
+      <div class="royal-card">
+        <div class="hero-header">
+          <div class="royal-pill-badge">✦ Official Royal Assessment Portal ✦</div>
+          <h1 class="hero-title">THE ROYAL ASSESSMENT CHALLENGE</h1>
+          <p class="hero-subtitle">Are you ready to prove your adjective mastery?</p>
+        </div>
+
+        <!-- Custom Fantasy Illustration: Crowned Swan, Golden Palace, Cherry Blossoms & Lotus Lake -->
+        <div class="hero-illustration-frame">
+          <svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Magical fantasy Chinese palace at twilight with a crowned white swan gliding on a lotus lake under a glowing golden moon and cherry blossom trees">
+            <defs>
+              <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#190624"/>
+                <stop offset="45%" stop-color="#4A0E2E"/>
+                <stop offset="80%" stop-color="#8E244D"/>
+                <stop offset="100%" stop-color="#C85A7C"/>
+              </linearGradient>
+              <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFFBE6" stop-opacity="1"/>
+                <stop offset="40%" stop-color="#F7DC6F" stop-opacity="0.85"/>
+                <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="lakeGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3B0B24"/>
+                <stop offset="50%" stop-color="#1F0618"/>
+                <stop offset="100%" stop-color="#10030D"/>
+              </linearGradient>
+              <linearGradient id="palaceGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFF0A5"/>
+                <stop offset="50%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#7E5109"/>
+              </linearGradient>
+              <linearGradient id="palaceCrimson" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8E1932"/>
+                <stop offset="100%" stop-color="#3E0714"/>
+              </linearGradient>
+              <linearGradient id="swanShade" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="70%" stop-color="#FFF5E4"/>
+                <stop offset="100%" stop-color="#E6C9A8"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Twilight Sky -->
+            <rect width="900" height="255" fill="url(#skyGrad)"/>
+
+            <!-- Twinkling Stars -->
+            <g fill="#FFF8D6">
+              <circle cx="110" cy="48" r="2" opacity="0.9"/>
+              <circle cx="240" cy="35" r="1.5" opacity="0.7"/>
+              <circle cx="350" cy="65" r="2.2" opacity="0.85"/>
+              <circle cx="540" cy="40" r="1.8" opacity="0.8"/>
+              <circle cx="790" cy="52" r="2.3" opacity="0.9"/>
+              <circle cx="835" cy="95" r="1.5" opacity="0.75"/>
+              <circle cx="60" cy="110" r="1.7" opacity="0.7"/>
+            </g>
+
+            <!-- Glowing Golden Full Moon -->
+            <circle cx="670" cy="95" r="95" fill="url(#moonGlow)"/>
+            <circle cx="670" cy="95" r="44" fill="#FFF7CC" stroke="#F7DC6F" stroke-width="2"/>
+
+            <!-- Distant Misty Mountains -->
+            <path d="M0 245 Q130 140 270 220 Q410 130 560 225 Q720 145 900 230 L900 255 L0 255 Z" fill="#2A081D" opacity="0.75"/>
+
+            <!-- Magnificent Chinese Palace Silhouette & Golden Roofs -->
+            <g transform="translate(275, 88)">
+              <!-- Main Central Hall -->
+              <rect x="115" y="92" width="130" height="75" fill="url(#palaceCrimson)" stroke="#D4AF37" stroke-width="1.5"/>
+              <!-- Palace Pillars -->
+              <g fill="#D4AF37">
+                <rect x="125" y="98" width="6" height="69"/>
+                <rect x="150" y="98" width="6" height="69"/>
+                <rect x="204" y="98" width="6" height="69"/>
+                <rect x="229" y="98" width="6" height="69"/>
+              </g>
+              <!-- Arched Golden Doorway -->
+              <path d="M167 167 V126 A13 13 0 0 1 193 126 V167 Z" fill="#F7DC6F"/>
+              <!-- Lower Curved Pagoda Roof -->
+              <path d="M88 96 Q180 78 272 96 Q242 74 218 65 H142 Q118 74 88 96 Z" fill="url(#palaceGold)" stroke="#FFF3B0" stroke-width="1.2"/>
+              <!-- Upper Tier -->
+              <rect x="142" y="42" width="76" height="26" fill="url(#palaceCrimson)" stroke="#D4AF37" stroke-width="1.2"/>
+              <path d="M118 45 Q180 28 242 45 Q215 24 180 12 Q145 24 118 45 Z" fill="url(#palaceGold)" stroke="#FFF3B0" stroke-width="1.2"/>
+              <!-- Golden Finial Spire -->
+              <line x1="180" y1="2" x2="180" y2="14" stroke="#FFF8D6" stroke-width="2.5"/>
+              <circle cx="180" cy="4" r="3.5" fill="#F7DC6F"/>
+
+              <!-- Left & Right Wing Pavilions -->
+              <rect x="35" y="114" width="80" height="53" fill="url(#palaceCrimson)" stroke="#D4AF37" stroke-width="1.2"/>
+              <path d="M18 116 Q75 102 122 116 Q98 98 75 90 Q52 98 18 116 Z" fill="url(#palaceGold)"/>
+              <rect x="245" y="114" width="80" height="53" fill="url(#palaceCrimson)" stroke="#D4AF37" stroke-width="1.2"/>
+              <path d="M238 116 Q285 102 342 116 Q308 98 285 90 Q262 98 238 116 Z" fill="url(#palaceGold)"/>
+            </g>
+
+            <!-- Peaceful Moonlit Lake -->
+            <rect x="0" y="252" width="900" height="128" fill="url(#lakeGrad)"/>
+            <!-- Moon Reflection on Water -->
+            <ellipse cx="670" cy="295" rx="48" ry="12" fill="#F7DC6F" opacity="0.22"/>
+            <ellipse cx="670" cy="322" rx="34" ry="7" fill="#F7DC6F" opacity="0.16"/>
+            <ellipse cx="455" cy="275" rx="135" ry="10" fill="#D4AF37" opacity="0.14"/>
+
+            <!-- Sparkling Water Ripples -->
+            <g stroke="#F7DC6F" stroke-width="1.3" opacity="0.45" stroke-linecap="round">
+              <line x1="180" y1="285" x2="250" y2="285"/>
+              <line x1="340" y1="348" x2="460" y2="348"/>
+              <line x1="560" y1="310" x2="630" y2="310"/>
+              <line x1="720" y1="345" x2="800" y2="345"/>
+            </g>
+
+            <!-- Pink Lotus Flowers Floating on Lake -->
+            <g transform="translate(215, 322)">
+              <ellipse cx="0" cy="8" rx="26" ry="7" fill="#1E5631" stroke="#4C9A2A" stroke-width="1"/>
+              <path d="M-16 5 Q-10 -12 0 -4 Q10 -12 16 5 Z" fill="#FF8DA1"/>
+              <path d="M-10 6 Q0 -16 10 6 Z" fill="#FFC2D1"/>
+              <circle cx="0" cy="2" r="3" fill="#F7DC6F"/>
+            </g>
+            <g transform="translate(615, 342)">
+              <ellipse cx="0" cy="8" rx="28" ry="7" fill="#1E5631" stroke="#4C9A2A" stroke-width="1"/>
+              <path d="M-18 5 Q-11 -13 0 -4 Q11 -13 18 5 Z" fill="#FF8DA1"/>
+              <path d="M-11 6 Q0 -17 11 6 Z" fill="#FFD6E0"/>
+              <circle cx="0" cy="2" r="3" fill="#F7DC6F"/>
+            </g>
+
+            <!-- HERO CROWNED WHITE SWAN GLIDING ON THE LAKE -->
+            <g transform="translate(360, 224)">
+              <!-- Water Reflection of Swan -->
+              <ellipse cx="75" cy="95" rx="68" ry="11" fill="#FFF8E7" opacity="0.16"/>
+              <!-- Swan Graceful Body -->
+              <path d="M35 78 C22 65, 32 45, 58 50 C76 53, 85 44, 88 26 C90 12, 99 6, 107 10 C114 14, 112 24, 106 33 C100 42, 98 51, 108 54 C122 57, 134 50, 142 46 C146 58, 136 78, 105 84 C74 90, 46 88, 35 78 Z" fill="url(#swanShade)" stroke="#D4AF37" stroke-width="2"/>
+              <!-- Feathered Wing Layers -->
+              <path d="M52 66 C68 54, 96 54, 118 63 C102 74, 72 76, 52 66 Z" fill="#FFFDF9" stroke="#E5C158" stroke-width="1.3"/>
+              <path d="M62 72 C76 64, 98 64, 114 70" fill="none" stroke="#D4AF37" stroke-width="1.2"/>
+              <!-- Swan Eye & Royal Orange Beak -->
+              <circle cx="104" cy="16" r="2.2" fill="#2B0712"/>
+              <path d="M111 16 L122 19 L111 21 Z" fill="#F39C12"/>
+              <!-- Tiny Golden Royal Crown on Swan's Head -->
+              <g transform="translate(93, -4)">
+                <path d="M2 12 L4 3 L9 8 L14 2 L19 8 L23 3 L24 12 Z" fill="#F7DC6F" stroke="#8C6214" stroke-width="1.2"/>
+                <circle cx="14" cy="8" r="1.6" fill="#E91E63"/>
+              </g>
+              <!-- Water Ripples Around Swan -->
+              <path d="M18 85 Q85 98 155 84" fill="none" stroke="#FFF3B0" stroke-width="1.8" opacity="0.75"/>
+            </g>
+
+            <!-- Framing Cherry Blossom Trees & Glowing Red/Gold Lanterns -->
+            <!-- Left Blossom Branch -->
+            <path d="M0 175 Q95 145 185 75" stroke="#3D161E" stroke-width="12" fill="none" stroke-linecap="round"/>
+            <path d="M85 138 Q135 150 175 132" stroke="#3D161E" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <g fill="#FFB7C5" opacity="0.95">
+              <circle cx="45" cy="135" r="28"/><circle cx="95" cy="110" r="34"/><circle cx="150" cy="85" r="30"/>
+              <circle cx="185" cy="68" r="24"/><circle cx="135" cy="135" r="24"/><circle cx="30" cy="95" r="26"/>
+            </g>
+            <g fill="#FF80AB" opacity="0.75">
+              <circle cx="65" cy="120" r="16"/><circle cx="125" cy="95" r="18"/><circle cx="165" cy="120" r="15"/>
+            </g>
+            <!-- Hanging Red & Gold Lantern (Left) -->
+            <g transform="translate(155, 136)">
+              <line x1="0" y1="0" x2="0" y2="16" stroke="#F7DC6F" stroke-width="2"/>
+              <rect x="-13" y="16" width="26" height="32" rx="11" fill="#C0392B" stroke="#F7DC6F" stroke-width="2"/>
+              <rect x="-8" y="13" width="16" height="4" fill="#F7DC6F"/>
+              <rect x="-8" y="48" width="16" height="4" fill="#F7DC6F"/>
+              <line x1="0" y1="52" x2="0" y2="66" stroke="#F7DC6F" stroke-width="2"/>
+            </g>
+
+            <!-- Right Blossom Branch -->
+            <path d="M900 165 Q805 135 735 65" stroke="#3D161E" stroke-width="12" fill="none" stroke-linecap="round"/>
+            <g fill="#FFB7C5" opacity="0.95">
+              <circle cx="860" cy="125" r="30"/><circle cx="805" cy="100" r="34"/><circle cx="750" cy="72" r="28"/>
+              <circle cx="835" cy="155" r="24"/><circle cx="880" cy="85" r="25"/>
+            </g>
+            <!-- Hanging Red & Gold Lantern (Right) -->
+            <g transform="translate(765, 102)">
+              <line x1="0" y1="0" x2="0" y2="18" stroke="#F7DC6F" stroke-width="2"/>
+              <rect x="-13" y="18" width="26" height="32" rx="11" fill="#C0392B" stroke="#F7DC6F" stroke-width="2"/>
+              <rect x="-8" y="15" width="16" height="4" fill="#F7DC6F"/>
+              <rect x="-8" y="50" width="16" height="4" fill="#F7DC6F"/>
+              <line x1="0" y1="54" x2="0" y2="68" stroke="#F7DC6F" stroke-width="2"/>
+            </g>
+
+            <!-- Floating Golden Sparkles -->
+            <g fill="#FFF8D6">
+              <circle cx="330" cy="215" r="2.5"/><circle cx="515" cy="225" r="3"/>
+              <circle cx="445" cy="195" r="2"/><circle cx="285" cy="260" r="2.2"/>
+            </g>
+          </svg>
+        </div>
+
+        <p class="welcome-text">
+          "Welcome, little word explorers! Your journey through the magical world of adjectives has brought you here. Complete the challenges, test your knowledge and become a true Adjective Master!"
+        </p>
+
+        <!-- Decorative Golden Instruction Panel -->
+        <div class="mission-panel">
+          <h2 class="mission-title">
+            <span>👑</span> YOUR MISSION <span>👑</span>
+          </h2>
+          <ul class="mission-grid">
+            <li><span class="mission-icon">1</span> Read each question carefully.</li>
+            <li><span class="mission-icon">2</span> Choose the best answer.</li>
+            <li><span class="mission-icon">3</span> Complete all 15 questions.</li>
+            <li><span class="mission-icon">4</span> Collect points and earn your final achievement.</li>
+          </ul>
+        </div>
+
+        <!-- Three Themed Stages Overview -->
+        <div class="stages-preview">
+          <div class="stage-mini-card">
+            <span>Stage 1 • Q1–Q5</span>
+            <strong>The Garden of Descriptions</strong>
+          </div>
+          <div class="stage-mini-card">
+            <span>Stage 2 • Q6–Q10</span>
+            <strong>The Palace of Comparisons</strong>
+          </div>
+          <div class="stage-mini-card">
+            <span>Stage 3 • Q11–Q15</span>
+            <strong>The Swan's Final Challenge</strong>
+          </div>
+        </div>
+
+        <!-- Pupil Name Input & Start Quest CTA -->
+        <div class="start-box">
+          <div id="saved-score-banner" class="saved-score-banner"></div>
+          <label for="pupil-name-input" class="name-label">Enter Your Royal Explorer Name:</label>
+          <input
+            type="text"
+            id="pupil-name-input"
+            class="name-input"
+            maxlength="28"
+            placeholder="e.g., Mei Ling, Amir, Sofia..."
+            autocomplete="off"
+          />
+          <button type="button" class="btn-royal-primary" onclick="beginAssessment()">
+            <span>🦢</span> Begin the Royal Assessment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 2: INTERACTIVE 15-QUESTION QUIZ GAME
+         ====================================================================== -->
+    <section id="quiz-view" class="view-section">
+      <!-- Top HUD: Stage Indicator, Question Counter, Score, Timer & Swan Progress Bar -->
+      <div class="quiz-hud">
+        <div class="hud-top-row">
+          <div class="stage-badge" id="hud-stage-badge">🌸 Stage 1: The Garden of Descriptions</div>
+          <div class="hud-stats">
+            <div class="hud-pill">Question <strong id="hud-q-num">1</strong> / 15</div>
+            <div class="hud-pill">Score: <strong id="hud-score">0</strong> / 150 pts</div>
+            <div class="hud-pill">Time: <strong id="hud-timer">00:00</strong></div>
+          </div>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="15" aria-valuenow="1" id="progress-bar-aria">
+          <div class="progress-fill" id="progress-fill">
+            <div class="progress-swan-marker">🦢</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage Transition Celebration Banner -->
+      <div id="stage-banner" class="stage-banner"></div>
+
+      <!-- Main Question Card -->
+      <div class="royal-card">
+        <div class="question-layout">
+          <!-- Left: Bespoke Fantasy Illustration Card -->
+          <div class="visual-scene-card">
+            <div class="visual-scene-inner" id="question-illustration-box">
+              <!-- Dynamic Rich SVG Scene Injected Here -->
+            </div>
+            <div class="visual-caption" id="question-visual-caption">
+              Look closely at the royal palace scene to help you answer!
+            </div>
+          </div>
+
+          <!-- Right: Question Prompt, Options & Immediate Feedback -->
+          <div>
+            <span class="q-type-tag" id="question-type-tag">Identify the Adjective</span>
+            <h2 class="q-prompt" id="question-prompt">Loading question...</h2>
+            <div class="q-sentence-box" id="question-sentence-box" style="display: none;"></div>
+
+            <div class="options-grid" id="options-container">
+              <!-- 4 Answer Buttons (or 2 for True/False) Injected Here -->
+            </div>
+
+            <!-- Immediate Visual & Educational Feedback -->
+            <div class="feedback-box" id="feedback-box" aria-live="polite">
+              <div class="feedback-heading" id="feedback-heading"></div>
+              <p class="feedback-explanation" id="feedback-explanation"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back / Next Quiz Navigation -->
+        <div class="quiz-nav-footer">
+          <button type="button" class="btn-royal-secondary" id="prev-btn" onclick="prevQuestion()">
+            ← Previous Question
+          </button>
+          <button type="button" class="btn-royal-primary" id="next-btn" onclick="nextQuestion()" disabled>
+            Next Question →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 3: FINAL RESULTS & ACHIEVEMENT CELEBRATION PAGE
+         ====================================================================== -->
+    <section id="results-view" class="view-section">
+      <div class="royal-card">
+        <div class="results-header">
+          <div class="royal-pill-badge">✨ Royal Quest Completed ✨</div>
+          <h1 class="results-title" id="results-main-heading">CONGRATULATIONS, WORD EXPLORER!</h1>
+        </div>
+
+        <div class="celebration-stage">
+          <!-- Celebrating Crowned Swan Illustration -->
+          <div class="visual-scene-card">
+            <div class="visual-scene-inner">
+              <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="celSky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#240834"/>
+                    <stop offset="55%" stop-color="#68142B"/>
+                    <stop offset="100%" stop-color="#B03A5B"/>
+                  </linearGradient>
+                  <radialGradient id="celAura" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFFBE0" stop-opacity="0.95"/>
+                    <stop offset="55%" stop-color="#F7DC6F" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <rect width="500" height="320" fill="url(#celSky)"/>
+                <circle cx="250" cy="145" r="130" fill="url(#celAura)"/>
+                <!-- Palace Pagoda Silhouette -->
+                <path d="M135 190 Q250 165 365 190 L345 170 H155 Z" fill="#D4AF37" opacity="0.65"/>
+                <rect x="165" y="190" width="170" height="55" fill="#4A0E1E" stroke="#F7DC6F" stroke-width="1.2"/>
+                <!-- Lake -->
+                <rect x="0" y="238" width="500" height="82" fill="#1D0514"/>
+                <!-- Celebrating Crowned White Swan -->
+                <g transform="translate(155, 118)">
+                  <!-- Spread Majestic Wings -->
+                  <path d="M55 95 C10 65, 8 20, 48 18 C66 20, 74 48, 82 78 Z" fill="#FFFDF7" stroke="#F7DC6F" stroke-width="2"/>
+                  <path d="M135 95 C180 65, 182 20, 142 18 C124 20, 116 48, 108 78 Z" fill="#FFFDF7" stroke="#F7DC6F" stroke-width="2"/>
+                  <!-- Swan Body & Neck -->
+                  <path d="M55 110 C42 95, 58 78, 84 82 C92 60, 88 35, 95 24 C101 16, 112 18, 113 27 C114 37, 104 54, 108 82 C132 78, 148 95, 135 110 C115 124, 75 124, 55 110 Z" fill="#FFFFFF" stroke="#D4AF37" stroke-width="2"/>
+                  <!-- Royal Crown -->
+                  <path d="M90 16 L93 4 L100 11 L106 3 L112 11 L118 4 L120 16 Z" fill="#F7DC6F" stroke="#8C6214" stroke-width="1.3"/>
+                  <circle cx="106" cy="11" r="2" fill="#E91E63"/>
+                  <!-- Beak & Eye -->
+                  <circle cx="108" cy="26" r="2.2" fill="#2B0712"/>
+                  <path d="M113 26 L124 29 L113 31 Z" fill="#F39C12"/>
+                </g>
+                <!-- Golden Sparkles & Petals -->
+                <g fill="#FFF8D6">
+                  <polygon points="95,65 98,74 107,77 98,80 95,89 92,80 83,77 92,74"/>
+                  <polygon points="405,70 408,79 417,82 408,85 405,94 402,85 393,82 402,79"/>
+                  <polygon points="250,35 253,43 261,46 253,49 250,57 247,49 239,46 247,43"/>
+                  <circle cx="150" cy="105" r="3"/><circle cx="355" cy="115" r="3"/>
+                </g>
+              </svg>
+            </div>
+            <div class="visual-caption">The Royal Swan celebrates your Adjective Quest!</div>
+          </div>
+
+          <!-- Achievement Badge & Score Summary -->
+          <div class="badge-showcase">
+            <div id="achievement-badge-svg"></div>
+            <div class="achievement-rank-label">Royal Achievement Unlocked</div>
+            <h2 class="achievement-rank-title" id="achievement-title">Royal Adjective Master</h2>
+            <div class="score-big-display"><span id="final-score-num" style="font-size:2.75rem;color:#fff;">150</span> <span>/ 150 pts</span></div>
+
+            <div class="stats-grid">
+              <div class="stat-box">
+                <span class="stat-val" id="stat-correct" style="color:#58D68D;">15</span>
+                <span class="stat-lbl">Correct Answers</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val" id="stat-incorrect" style="color:#FF8A80;">0</span>
+                <span class="stat-lbl">Incorrect Answers</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val" id="stat-percent">100%</span>
+                <span class="stat-lbl">Accuracy Score</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val" id="stat-time">01:45</span>
+                <span class="stat-lbl">Time Taken</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personalised Encouraging Message -->
+        <div class="personal-message-box" id="personal-feedback-msg"></div>
+
+        <!-- Action Buttons: Review Answers, Play Again, Return to Home -->
+        <div class="results-actions">
+          <button type="button" class="btn-royal-secondary" id="toggle-review-btn" onclick="toggleReviewAnswers()">
+            📜 Review Answers
+          </button>
+          <button type="button" class="btn-royal-primary" onclick="playAgain()">
+            🔄 Play Again
+          </button>
+          <button type="button" class="btn-royal-secondary" onclick="returnToLanding()">
+            🏰 Return to Home
+          </button>
+        </div>
+
+        <!-- Full 15-Question Answer Review Breakdown -->
+        <div class="review-panel" id="review-panel">
+          <h3 class="review-heading">📜 Royal Scroll of Answers & Explanations</h3>
+          <div id="review-list"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Royal Toast Notification for Nav Links -->
+  <div id="royal-toast" class="royal-toast" role="status" aria-live="polite">
+    <div class="royal-toast-title" id="toast-title">Navigation Notice</div>
+    <div id="toast-body" style="font-size:0.9rem; line-height:1.45;"></div>
+  </div>
+
+  <!-- ========================================================================
+       JAVASCRIPT: ILLUSTRATIONS, 15 ESL QUESTIONS, AUDIO, SCORING & STORAGE
+       ======================================================================== -->
+  <script>
+    /* ------------------------------------------------------------------------
+       1. HIGH-DETAIL FANTASY SVG ILLUSTRATIONS FOR ALL 15 QUESTIONS
+       ------------------------------------------------------------------------ */
+    const ILLUSTRATIONS = {
+      // Q1: White swan with golden crown gliding on silent lotus lake
+      q1_swan: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1Sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#220933"/><stop offset="100%" stop-color="#7B1E43"/></linearGradient>
+            <linearGradient id="g1Water" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#350A24"/><stop offset="100%" stop-color="#14030E"/></linearGradient>
+          </defs>
+          <rect width="460" height="175" fill="url(#g1Sky)"/>
+          <circle cx="370" cy="62" r="28" fill="#FFF7CC" opacity="0.9"/>
+          <rect y="175" width="460" height="105" fill="url(#g1Water)"/>
+          <!-- Lotus Flowers -->
+          <g transform="translate(85, 225)"><ellipse cx="0" cy="6" rx="22" ry="6" fill="#1E5631"/><path d="M-12 4 Q0 -14 12 4 Z" fill="#FF9EB5"/><circle cx="0" cy="1" r="2.5" fill="#F7DC6F"/></g>
+          <g transform="translate(365, 232)"><ellipse cx="0" cy="6" rx="24" ry="6" fill="#1E5631"/><path d="M-14 4 Q0 -15 14 4 Z" fill="#FFB7C5"/><circle cx="0" cy="1" r="2.5" fill="#F7DC6F"/></g>
+          <!-- Graceful White Swan -->
+          <g transform="translate(155, 118)">
+            <path d="M25 82 C10 66, 22 45, 50 50 C70 54, 78 44, 82 24 C85 10, 96 5, 104 10 C111 14, 108 25, 101 34 C94 43, 93 52, 105 55 C120 58, 134 50, 142 46 C146 60, 135 82, 102 88 C68 94, 38 92, 25 82 Z" fill="#FFFDF7" stroke="#D4AF37" stroke-width="2"/>
+            <path d="M44 68 C64 55, 94 55, 116 65 C98 76, 66 78, 44 68 Z" fill="#F7E9D7" stroke="#D4AF37" stroke-width="1.2"/>
+            <circle cx="100" cy="16" r="2" fill="#2B0712"/>
+            <path d="M107 16 L118 19 L107 21 Z" fill="#F39C12"/>
+            <path d="M89 -1 L92 -9 L97 -4 L102 -10 L107 -4 L111 -9 L113 -1 Z" fill="#F7DC6F" stroke="#8C6214" stroke-width="1"/>
+          </g>
+          <path d="M150 212 Q230 226 315 212" fill="none" stroke="#F7DC6F" stroke-width="1.5" opacity="0.65"/>
+        </svg>`,
+
+      // Q2: Glowing red and gold lanterns hanging from cherry blossom branch
+      q2_lanterns: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g2Bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1E072B"/><stop offset="100%" stop-color="#5E132D"/></linearGradient>
+            <radialGradient id="lanGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FF5252" stop-opacity="0.7"/><stop offset="100%" stop-color="#FF5252" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="460" height="280" fill="url(#g2Bg)"/>
+          <circle cx="150" cy="165" r="75" fill="url(#lanGlow)"/>
+          <circle cx="315" cy="145" r="75" fill="url(#lanGlow)"/>
+          <!-- Cherry Blossom Branch -->
+          <path d="M0 55 Q210 85 460 35" stroke="#3B131C" stroke-width="14" fill="none"/>
+          <g fill="#FFB7C5">
+            <circle cx="65" cy="52" r="28"/><circle cx="135" cy="65" r="32"/><circle cx="235" cy="62" r="30"/><circle cx="345" cy="48" r="32"/><circle cx="415" cy="40" r="26"/>
+          </g>
+          <!-- Left Red & Gold Lantern -->
+          <g transform="translate(150, 72)">
+            <line x1="0" y1="0" x2="0" y2="28" stroke="#F7DC6F" stroke-width="2.5"/>
+            <rect x="-26" y="28" width="52" height="66" rx="22" fill="#C0392B" stroke="#F7DC6F" stroke-width="2.5"/>
+            <ellipse cx="0" cy="61" rx="14" ry="32" fill="none" stroke="#F7DC6F" stroke-width="1.3"/>
+            <rect x="-16" y="23" width="32" height="6" rx="2" fill="#F7DC6F"/>
+            <rect x="-16" y="94" width="32" height="6" rx="2" fill="#F7DC6F"/>
+            <line x1="0" y1="100" x2="0" y2="128" stroke="#F7DC6F" stroke-width="2.5"/>
+          </g>
+          <!-- Right Red & Gold Lantern -->
+          <g transform="translate(315, 52)">
+            <line x1="0" y1="0" x2="0" y2="25" stroke="#F7DC6F" stroke-width="2.5"/>
+            <rect x="-26" y="25" width="52" height="66" rx="22" fill="#D32F2F" stroke="#F7DC6F" stroke-width="2.5"/>
+            <ellipse cx="0" cy="58" rx="14" ry="32" fill="none" stroke="#F7DC6F" stroke-width="1.3"/>
+            <rect x="-16" y="20" width="32" height="6" rx="2" fill="#F7DC6F"/>
+            <rect x="-16" y="91" width="32" height="6" rx="2" fill="#F7DC6F"/>
+            <line x1="0" y1="97" x2="0" y2="125" stroke="#F7DC6F" stroke-width="2.5"/>
+          </g>
+        </svg>`,
+
+      // Q3: Magnificent tall golden Chinese palace
+      q3_palace: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g3Sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#190624"/><stop offset="100%" stop-color="#8E244D"/></linearGradient>
+            <linearGradient id="g3Roof" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#996515"/><stop offset="50%" stop-color="#FFF0A5"/><stop offset="100%" stop-color="#996515"/></linearGradient>
+          </defs>
+          <rect width="460" height="280" fill="url(#g3Sky)"/>
+          <circle cx="85" cy="65" r="32" fill="#FFF7CC" opacity="0.85"/>
+          <!-- Grand Imperial Palace -->
+          <rect x="75" y="232" width="310" height="24" fill="#F8F1E5" stroke="#D4AF37" stroke-width="1.5"/>
+          <rect x="105" y="155" width="250" height="77" fill="#68142B" stroke="#F7DC6F" stroke-width="2"/>
+          <!-- Golden Pillars -->
+          <g fill="#F7DC6F">
+            <rect x="120" y="160" width="9" height="72"/><rect x="165" y="160" width="9" height="72"/>
+            <rect x="286" y="160" width="9" height="72"/><rect x="331" y="160" width="9" height="72"/>
+          </g>
+          <path d="M210 232 V182 A20 20 0 0 1 250 182 V232 Z" fill="#F7DC6F"/>
+          <!-- Tier 1 Roof -->
+          <path d="M72 158 Q230 132 388 158 Q340 128 295 116 H165 Q120 128 72 158 Z" fill="url(#g3Roof)"/>
+          <!-- Tier 2 Hall & Roof -->
+          <rect x="155" y="82" width="150" height="36" fill="#781733" stroke="#F7DC6F" stroke-width="1.5"/>
+          <path d="M122 85 Q230 60 338 85 Q292 56 230 34 Q168 56 122 85 Z" fill="url(#g3Roof)"/>
+          <line x1="230" y1="14" x2="230" y2="36" stroke="#FFF8D6" stroke-width="3"/>
+          <circle cx="230" cy="16" r="5" fill="#F7DC6F"/>
+        </svg>`,
+
+      // Q4: Delicate pink lotus flower floating on sparkling water
+      q4_lotus: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g4Lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3E0B29"/><stop offset="100%" stop-color="#14030E"/></linearGradient>
+            <linearGradient id="petalGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFE5EC"/><stop offset="100%" stop-color="#FF758F"/></linearGradient>
+          </defs>
+          <rect width="460" height="280" fill="url(#g4Lake)"/>
+          <!-- Sparkling Ripples -->
+          <ellipse cx="230" cy="195" rx="155" ry="34" fill="none" stroke="#F7DC6F" stroke-width="1.5" opacity="0.45"/>
+          <ellipse cx="230" cy="195" rx="195" ry="48" fill="none" stroke="#FFB7C5" stroke-width="1.2" opacity="0.3"/>
+          <!-- Emerald Lily Pad -->
+          <ellipse cx="230" cy="192" rx="115" ry="28" fill="#1B4332" stroke="#52B788" stroke-width="2"/>
+          <!-- Layered Delicate Pink Lotus Petals -->
+          <g transform="translate(230, 175)">
+            <path d="M-75 10 Q-55 -48 -12 -10 Z" fill="#FF8FA3" stroke="#FFF0F3" stroke-width="1"/>
+            <path d="M75 10 Q55 -48 12 -10 Z" fill="#FF8FA3" stroke="#FFF0F3" stroke-width="1"/>
+            <path d="M-52 14 Q-32 -68 0 -16 Q32 -68 52 14 Z" fill="url(#petalGrad)" stroke="#FFF" stroke-width="1.2"/>
+            <path d="M-26 16 Q0 -82 26 16 Z" fill="#FFF0F3" stroke="#FF8FA3" stroke-width="1.2"/>
+            <ellipse cx="0" cy="4" rx="16" ry="8" fill="#F7DC6F"/>
+          </g>
+          <!-- Golden Sparkles -->
+          <g fill="#FFF8D6">
+            <circle cx="115" cy="115" r="3"/><circle cx="345" cy="105" r="2.5"/><circle cx="290" cy="75" r="2"/><circle cx="165" cy="80" r="2.5"/>
+          </g>
+        </svg>`,
+
+      // Q5: Colourful peacock and golden koi fish in the royal garden
+      q5_garden: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="460" height="280" fill="#270929"/>
+          <!-- Garden Stone Path & Pond -->
+          <ellipse cx="325" cy="215" rx="105" ry="42" fill="#18051C" stroke="#D4AF37" stroke-width="2"/>
+          <!-- Golden Koi Fish -->
+          <g transform="translate(310, 212)">
+            <path d="M-28 0 Q0 -16 28 0 Q0 16 -28 0 Z" fill="#FF9F1C" stroke="#FFF3B0" stroke-width="1.2"/>
+            <path d="M26 0 L42 -10 L38 0 L42 10 Z" fill="#FFBF69"/>
+            <circle cx="-16" cy="-3" r="2" fill="#2B0712"/>
+          </g>
+          <!-- Proud Garden Peacock -->
+          <g transform="translate(135, 165)">
+            <!-- Colourful Tail Fan -->
+            <circle cx="0" cy="-15" r="68" fill="#1B4965" stroke="#5FA8D3" stroke-width="2"/>
+            <circle cx="0" cy="-15" r="52" fill="#2A9D8F" opacity="0.85"/>
+            <g fill="#F7DC6F">
+              <circle cx="-42" cy="-35" r="5"/><circle cx="-22" cy="-58" r="5"/><circle cx="0" cy="-65" r="5"/>
+              <circle cx="22" cy="-58" r="5"/><circle cx="42" cy="-35" r="5"/>
+            </g>
+            <!-- Peacock Body & Neck -->
+            <path d="M-12 45 C-14 20, -6 -5, 0 -22 C6 -5, 14 20, 12 45 Z" fill="#1D3557" stroke="#F7DC6F" stroke-width="1.5"/>
+            <circle cx="0" cy="-24" r="7" fill="#1D3557"/>
+            <path d="M5 -24 L13 -22 L5 -20 Z" fill="#F7DC6F"/>
+          </g>
+          <!-- Cherry Tree Top -->
+          <g fill="#FFB7C5">
+            <circle cx="60" cy="40" r="35"/><circle cx="130" cy="30" r="32"/><circle cx="390" cy="45" r="38"/>
+          </g>
+        </svg>`,
+
+      // Q6: Two bridges — one short wooden bridge and one much longer white marble bridge
+      q6_bridges: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="460" height="170" fill="#2E0927"/>
+          <rect y="170" width="460" height="110" fill="#190414"/>
+          <!-- Short Wooden Bridge (Left) -->
+          <g transform="translate(35, 152)">
+            <path d="M0 32 Q45 8 90 32" fill="none" stroke="#A47148" stroke-width="12"/>
+            <path d="M0 22 Q45 -2 90 22" fill="none" stroke="#D4A373" stroke-width="3"/>
+            <text x="45" y="65" fill="#FFB7C5" font-size="13" font-weight="bold" text-anchor="middle">Wooden Bridge</text>
+          </g>
+          <!-- Much Longer White Marble Bridge (Right) -->
+          <g transform="translate(165, 136)">
+            <path d="M0 48 Q130 -4 260 48" fill="none" stroke="#FFFDF7" stroke-width="16"/>
+            <path d="M0 34 Q130 -18 260 34" fill="none" stroke="#F7DC6F" stroke-width="4"/>
+            <line x1="65" y1="18" x2="65" y2="32" stroke="#F7DC6F" stroke-width="2.5"/>
+            <line x1="130" y1="8" x2="130" y2="22" stroke="#F7DC6F" stroke-width="2.5"/>
+            <line x1="195" y1="18" x2="195" y2="32" stroke="#F7DC6F" stroke-width="2.5"/>
+            <text x="130" y="80" fill="#F7DC6F" font-size="14" font-weight="bold" text-anchor="middle">Marble Bridge</text>
+          </g>
+        </svg>`,
+
+      // Q7: Three glowing lanterns of different brightness/size (middle lantern brightest of all!)
+      q7_three_lanterns: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="superBright" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFFBE0" stop-opacity="1"/>
+              <stop offset="45%" stop-color="#F7DC6F" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="#F7DC6F" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="460" height="280" fill="#210621"/>
+          <line x1="20" y1="38" x2="440" y2="38" stroke="#D4AF37" stroke-width="4"/>
+          <!-- Left Lantern (Dimmer) -->
+          <g transform="translate(105, 38)">
+            <line x1="0" y1="0" x2="0" y2="38" stroke="#D4AF37" stroke-width="2"/>
+            <rect x="-20" y="38" width="40" height="52" rx="16" fill="#8E2430" stroke="#D4AF37" stroke-width="1.5"/>
+            <text x="0" y="118" fill="#E6D7C3" font-size="12" text-anchor="middle">Left</text>
+          </g>
+          <!-- Middle Lantern (BRIGHTEST OF ALL!) -->
+          <g transform="translate(230, 38)">
+            <circle cx="0" cy="82" r="88" fill="url(#superBright)"/>
+            <line x1="0" y1="0" x2="0" y2="34" stroke="#FFF8D6" stroke-width="3"/>
+            <rect x="-32" y="34" width="64" height="82" rx="26" fill="#FFCA28" stroke="#FFFDF7" stroke-width="3"/>
+            <rect x="-20" y="28" width="40" height="7" fill="#D4AF37"/>
+            <rect x="-20" y="116" width="40" height="7" fill="#D4AF37"/>
+            <text x="0" y="148" fill="#FFF8D6" font-size="14" font-weight="bold" text-anchor="middle">Middle Lantern</text>
+          </g>
+          <!-- Right Lantern (Medium) -->
+          <g transform="translate(355, 38)">
+            <line x1="0" y1="0" x2="0" y2="36" stroke="#D4AF37" stroke-width="2"/>
+            <rect x="-23" y="36" width="46" height="58" rx="18" fill="#C0392B" stroke="#F7DC6F" stroke-width="2"/>
+            <text x="0" y="122" fill="#E6D7C3" font-size="12" text-anchor="middle">Right</text>
+          </g>
+        </svg>`,
+
+      // Q8: Full glowing golden moon over palace towers
+      q8_moon: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="g8Moon" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFFDE7"/><stop offset="50%" stop-color="#F7DC6F" stop-opacity="0.65"/><stop offset="100%" stop-color="#F7DC6F" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="460" height="280" fill="#180524"/>
+          <circle cx="230" cy="105" r="105" fill="url(#g8Moon)"/>
+          <circle cx="230" cy="105" r="52" fill="#FFF9C4" stroke="#F7DC6F" stroke-width="2.5"/>
+          <!-- Palace Towers Silhouette -->
+          <path d="M55 215 Q125 190 195 215 L175 192 H75 Z" fill="#D4AF37"/>
+          <rect x="85" y="215" width="80" height="65" fill="#3B0918"/>
+          <path d="M265 215 Q335 190 405 215 L385 192 H285 Z" fill="#D4AF37"/>
+          <rect x="295" y="215" width="80" height="65" fill="#3B0918"/>
+          <g fill="#FFF8D6"><circle cx="95" cy="55" r="2.5"/><circle cx="370" cy="50" r="2.5"/><circle cx="135" cy="85" r="2"/><circle cx="330" cy="80" r="2"/></g>
+        </svg>`,
+
+      // Q9: Ancient golden scroll vs new book
+      q9_scroll: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="460" height="280" fill="#2A081D"/>
+          <!-- Ancient Imperial Scroll -->
+          <g transform="translate(80, 65)">
+            <rect x="18" y="10" width="135" height="145" fill="#F8E8C8" stroke="#D4AF37" stroke-width="2.5"/>
+            <rect x="6" y="4" width="159" height="14" rx="7" fill="#996515" stroke="#F7DC6F" stroke-width="1.5"/>
+            <rect x="6" y="148" width="159" height="14" rx="7" fill="#996515" stroke="#F7DC6F" stroke-width="1.5"/>
+            <line x1="40" y1="42" x2="130" y2="42" stroke="#68142B" stroke-width="3"/>
+            <line x1="40" y1="66" x2="130" y2="66" stroke="#68142B" stroke-width="3"/>
+            <line x1="40" y1="90" x2="115" y2="90" stroke="#68142B" stroke-width="3"/>
+            <circle cx="122" cy="124" r="12" fill="#C0392B"/>
+            <text x="85" y="185" fill="#F7DC6F" font-size="14" font-weight="bold" text-anchor="middle">Ancient Scroll</text>
+          </g>
+          <!-- New Book -->
+          <g transform="translate(295, 105)">
+            <rect x="0" y="0" width="85" height="105" rx="8" fill="#5DADE2" stroke="#FFF" stroke-width="2"/>
+            <rect x="10" y="0" width="6" height="105" fill="#2E86C1"/>
+            <text x="42" y="132" fill="#FFB7C5" font-size="13" font-weight="bold" text-anchor="middle">New Book</text>
+          </g>
+        </svg>`,
+
+      // Q10: Two cherry blossom trees of different heights
+      q10_trees: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="460" height="230" fill="#260829"/>
+          <rect y="230" width="460" height="50" fill="#1B4332"/>
+          <!-- Tree A (Shorter) -->
+          <g transform="translate(130, 145)">
+            <rect x="-8" y="25" width="16" height="60" fill="#4A1C24"/>
+            <circle cx="0" cy="15" r="36" fill="#FFB7C5"/>
+            <circle cx="-22" cy="24" r="24" fill="#FF8FA3"/>
+            <circle cx="22" cy="24" r="24" fill="#FF8FA3"/>
+            <text x="0" y="108" fill="#FFF" font-size="13" font-weight="bold" text-anchor="middle">Tree A</text>
+          </g>
+          <!-- Tree B (Taller) -->
+          <g transform="translate(315, 85)">
+            <rect x="-11" y="45" width="22" height="100" fill="#4A1C24"/>
+            <circle cx="0" cy="25" r="52" fill="#FFB7C5"/>
+            <circle cx="-34" cy="40" r="34" fill="#FF8FA3"/>
+            <circle cx="34" cy="40" r="34" fill="#FF8FA3"/>
+            <text x="0" y="168" fill="#F7DC6F" font-size="14" font-weight="bold" text-anchor="middle">Tree B (Taller)</text>
+          </g>
+        </svg>`,
+
+      // Q11: Tiny golden crown resting on a velvet cushion
+      q11_crown: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="g11Glow" cx="50%" cy="45%" r="50%"><stop offset="0%" stop-color="#FFF8D6" stop-opacity="0.65"/><stop offset="100%" stop-color="#FFF8D6" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="460" height="280" fill="#230614"/>
+          <circle cx="230" cy="135" r="115" fill="url(#g11Glow)"/>
+          <!-- Royal Maroon Velvet Cushion -->
+          <path d="M115 195 Q230 175 345 195 L360 225 Q230 245 100 225 Z" fill="#781733" stroke="#F7DC6F" stroke-width="2.5"/>
+          <!-- Tiny Golden Crown -->
+          <g transform="translate(182, 112)">
+            <path d="M12 65 L18 18 L38 42 L48 10 L58 42 L78 18 L84 65 Z" fill="#F7DC6F" stroke="#996515" stroke-width="2.5"/>
+            <rect x="12" y="62" width="72" height="12" rx="4" fill="#D4AF37" stroke="#FFF8D6" stroke-width="1.5"/>
+            <circle cx="48" cy="46" r="5" fill="#E91E63"/>
+            <circle cx="28" cy="52" r="3.5" fill="#2ECC71"/>
+            <circle cx="68" cy="52" r="3.5" fill="#2ECC71"/>
+          </g>
+        </svg>`,
+
+      // Q12: Sparkling palace garden under golden moonlight
+      q12_garden_moon: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="460" height="280" fill="#1C0626"/>
+          <circle cx="355" cy="68" r="38" fill="#FFF9C4" stroke="#F7DC6F" stroke-width="2"/>
+          <!-- Glowing Flowers & Lanterns -->
+          <g transform="translate(120, 195)">
+            <circle cx="0" cy="0" r="24" fill="#FF8FA3"/><circle cx="0" cy="0" r="8" fill="#F7DC6F"/>
+          </g>
+          <g transform="translate(230, 180)">
+            <circle cx="0" cy="0" r="28" fill="#FFB7C5"/><circle cx="0" cy="0" r="9" fill="#F7DC6F"/>
+          </g>
+          <g transform="translate(340, 200)">
+            <circle cx="0" cy="0" r="22" fill="#F48FB1"/><circle cx="0" cy="0" r="7" fill="#F7DC6F"/>
+          </g>
+          <!-- Sparkles -->
+          <g fill="#FFF8D6">
+            <polygon points="165,95 168,104 177,107 168,110 165,119 162,110 153,107 162,104"/>
+            <polygon points="275,115 278,123 286,126 278,129 275,137 272,129 264,126 272,123"/>
+          </g>
+        </svg>`,
+
+      // Q13: Peaceful, calm, mirror-still twilight lake
+      q13_tranquil_lake: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g13Sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2B0938"/><stop offset="100%" stop-color="#9E3B63"/></linearGradient>
+          </defs>
+          <rect width="460" height="150" fill="url(#g13Sky)"/>
+          <circle cx="230" cy="85" r="34" fill="#FFF8D6"/>
+          <rect y="150" width="460" height="130" fill="#24071D"/>
+          <!-- Smooth Mirror Reflection -->
+          <circle cx="230" cy="212" r="32" fill="#FFF8D6" opacity="0.28"/>
+          <line x1="120" y1="185" x2="340" y2="185" stroke="#FFB7C5" stroke-width="1.5" opacity="0.55"/>
+          <line x1="150" y1="238" x2="310" y2="238" stroke="#F7DC6F" stroke-width="1.5" opacity="0.45"/>
+        </svg>`,
+
+      // Q14: Royal swan wearing golden crown under falling pink petals
+      q14_passage_swan: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="460" height="280" fill="#320A24"/>
+          <!-- Falling Pink Petals -->
+          <g fill="#FFB7C5">
+            <ellipse cx="90" cy="55" rx="8" ry="4" transform="rotate(25 90 55)"/>
+            <ellipse cx="165" cy="40" rx="8" ry="4" transform="rotate(-18 165 40)"/>
+            <ellipse cx="320" cy="60" rx="9" ry="5" transform="rotate(32 320 60)"/>
+            <ellipse cx="375" cy="115" rx="8" ry="4" transform="rotate(-25 375 115)"/>
+            <ellipse cx="105" cy="145" rx="8" ry="4" transform="rotate(15 105 145)"/>
+          </g>
+          <!-- Royal Swan Portrait -->
+          <g transform="translate(155, 85)">
+            <path d="M25 115 C10 95, 25 68, 58 74 C80 78, 90 62, 95 36 C98 18, 112 12, 122 18 C130 24, 126 38, 118 50 C110 62, 108 75, 122 79 C140 84, 155 74, 165 68 C170 86, 156 115, 118 122 C78 130, 40 128, 25 115 Z" fill="#FFFDF7" stroke="#F7DC6F" stroke-width="2.2"/>
+            <circle cx="116" cy="26" r="2.5" fill="#2B0712"/>
+            <path d="M125 26 L138 30 L125 33 Z" fill="#F39C12"/>
+            <path d="M102 6 L106 -5 L112 2 L118 -6 L124 2 L129 -5 L132 6 Z" fill="#F7DC6F" stroke="#8C6214" stroke-width="1.2"/>
+          </g>
+        </svg>`,
+
+      // Q15: Final Grand Finale — Crowned swan & sparkling crown in front of golden palace
+      q15_finale: `
+        <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="g15Burst" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#FFFBE0" stop-opacity="0.85"/><stop offset="50%" stop-color="#D4AF37" stop-opacity="0.3"/><stop offset="100%" stop-color="#2B0712" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="460" height="280" fill="#2B0712"/>
+          <circle cx="230" cy="130" r="145" fill="url(#g15Burst)"/>
+          <!-- Golden Palace Arch -->
+          <path d="M95 230 V135 A135 115 0 0 1 365 135 V230" fill="none" stroke="#F7DC6F" stroke-width="4"/>
+          <!-- Hero Crowned Swan -->
+          <g transform="translate(155, 100)">
+            <path d="M25 108 C10 88, 25 64, 56 70 C78 74, 88 58, 92 34 C95 16, 109 10, 119 16 C127 22, 123 36, 115 48 C107 60, 105 72, 119 76 C137 80, 152 70, 160 64 C165 82, 152 108, 115 115 C76 122, 40 120, 25 108 Z" fill="#FFFFFF" stroke="#D4AF37" stroke-width="2.2"/>
+            <path d="M100 5 L104 -6 L110 1 L116 -7 L122 1 L127 -6 L130 5 Z" fill="#F7DC6F" stroke="#8C6214" stroke-width="1.2"/>
+            <circle cx="114" cy="24" r="2.4" fill="#2B0712"/>
+            <path d="M122 24 L135 28 L122 31 Z" fill="#F39C12"/>
+          </g>
+          <g fill="#FFF8D6">
+            <polygon points="115,75 118,85 128,88 118,91 115,101 112,91 102,88 112,85"/>
+            <polygon points="345,75 348,85 358,88 348,91 345,101 342,91 332,88 342,85"/>
+          </g>
+        </svg>`
+    };
+
+    /* ------------------------------------------------------------------------
+       2. COMPLETE 15-QUESTION YEAR 6 ESL ASSESSMENT BANK (3 THEMED STAGES)
+       ------------------------------------------------------------------------ */
+    const QUESTIONS = [
+      // ==================== STAGE 1: THE GARDEN OF DESCRIPTIONS ====================
+      {
+        id: 1,
+        stage: 1,
+        stageTitle: "🌸 Stage 1: The Garden of Descriptions",
+        type: "Identify the Adjective",
+        illustration: ILLUSTRATIONS.q1_swan,
+        caption: "A graceful white swan glides across the silent lotus lake.",
+        prompt: "Read the sentence below. Which word is an adjective describing the swan?",
+        sentence: "“The graceful swan glides across the silent lake.”",
+        options: ["glides", "graceful", "swan", "across"],
+        correctIndex: 1,
+        explanation: "'Graceful' is an adjective because it describes the noun 'swan' (how the swan looks and moves). 'Swan' is a noun, and 'glides' is a verb."
+      },
+      {
+        id: 2,
+        stage: 1,
+        stageTitle: "🌸 Stage 1: The Garden of Descriptions",
+        type: "Picture-Based Question",
+        illustration: ILLUSTRATIONS.q2_lanterns,
+        caption: "Look at the lanterns hanging from the cherry blossom branch.",
+        prompt: "Look closely at the picture. Which pair of adjectives best describes the lanterns?",
+        sentence: "“Two _______ lanterns hang beneath the pink blossoms.”",
+        options: ["square and blue", "red and glowing", "heavy and muddy", "cold and invisible"],
+        correctIndex: 1,
+        explanation: "'Red' (colour) and 'glowing' (appearance) are adjectives that accurately describe the bright red lanterns in the picture!"
+      },
+      {
+        id: 3,
+        stage: 1,
+        stageTitle: "🌸 Stage 1: The Garden of Descriptions",
+        type: "Sentence Completion",
+        illustration: ILLUSTRATIONS.q3_palace,
+        caption: "The imperial palace towers above the royal gardens.",
+        prompt: "Choose the most suitable adjective of size and beauty to complete the sentence:",
+        sentence: "“The emperor lives inside a _______ palace with curved golden roofs.”",
+        options: ["magnificent", "quickly", "whispered", "palace"],
+        correctIndex: 0,
+        explanation: "'Magnificent' is an adjective that describes the grand beauty and size of the noun 'palace'. 'Quickly' is an adverb and 'whispered' is a verb."
+      },
+      {
+        id: 4,
+        stage: 1,
+        stageTitle: "🌸 Stage 1: The Garden of Descriptions",
+        type: "True or False",
+        illustration: ILLUSTRATIONS.q4_lotus,
+        caption: "A delicate pink lotus floats on the sparkling water.",
+        prompt: "True or False: In the sentence below, BOTH 'delicate' and 'pink' are adjectives describing the lotus flower.",
+        sentence: "“A delicate pink lotus floats on the sparkling water.”",
+        options: ["True", "False"],
+        isTwoCol: true,
+        correctIndex: 0,
+        explanation: "True! Both 'delicate' (appearance/quality) and 'pink' (colour) describe the noun 'lotus'."
+      },
+      {
+        id: 5,
+        stage: 1,
+        stageTitle: "🌸 Stage 1: The Garden of Descriptions",
+        type: "Multiple Choice",
+        illustration: ILLUSTRATIONS.q5_garden,
+        caption: "A colourful peacock and golden koi fish live in the royal garden.",
+        prompt: "Which word in the list below is NOT an adjective?",
+        sentence: "“In the royal garden, a colourful peacock stands beside a golden fish.”",
+        options: ["royal", "colourful", "golden", "peacock"],
+        correctIndex: 3,
+        explanation: "'Peacock' is a noun (the name of a bird), whereas 'royal', 'colourful', and 'golden' are all adjectives!"
+      },
+
+      // ==================== STAGE 2: THE PALACE OF COMPARISONS ====================
+      {
+        id: 6,
+        stage: 2,
+        stageTitle: "🏯 Stage 2: The Palace of Comparisons",
+        type: "Sentence Completion",
+        illustration: ILLUSTRATIONS.q6_bridges,
+        caption: "Compare the length of the wooden bridge and the marble bridge.",
+        prompt: "We are comparing TWO bridges. Choose the correct comparative adjective:",
+        sentence: "“The white marble bridge is _______ than the wooden bridge.”",
+        options: ["long", "longer", "longest", "more long"],
+        correctIndex: 1,
+        explanation: "When comparing two things, we add '-er' to short adjectives like 'long' to make the comparative form 'longer' (used with 'than')."
+      },
+      {
+        id: 7,
+        stage: 2,
+        stageTitle: "🏯 Stage 2: The Palace of Comparisons",
+        type: "Picture-Based Question",
+        illustration: ILLUSTRATIONS.q7_three_lanterns,
+        caption: "Compare all three lanterns hanging in the palace hall.",
+        prompt: "Look at the three lanterns in the picture. Choose the correct superlative adjective:",
+        sentence: "“Out of all three lanterns, the middle lantern is the _______!”",
+        options: ["bright", "brighter", "brightest", "most bright"],
+        correctIndex: 2,
+        explanation: "When comparing three or more things, we use 'the' + the superlative '-est' form: 'the brightest'!"
+      },
+      {
+        id: 8,
+        stage: 2,
+        stageTitle: "🏯 Stage 2: The Palace of Comparisons",
+        type: "Identify the Superlative",
+        illustration: ILLUSTRATIONS.q8_moon,
+        caption: "The glowing golden moon shines over the palace towers.",
+        prompt: "Read the sentence carefully. Which phrase contains the SUPERLATIVE adjective?",
+        sentence: "“Tonight, the full moon looks brighter than yesterday, making it the most magical night of the year.”",
+        options: ["full moon", "brighter than", "most magical", "the year"],
+        correctIndex: 2,
+        explanation: "'Most magical' is the superlative form of the long adjective 'magical', comparing tonight to every other night of the year!"
+      },
+      {
+        id: 9,
+        stage: 2,
+        stageTitle: "🏯 Stage 2: The Palace of Comparisons",
+        type: "Sentence Completion",
+        illustration: ILLUSTRATIONS.q9_scroll,
+        caption: "Comparing an ancient imperial scroll with a new book.",
+        prompt: "Choose the correct comparative form for the long adjective 'interesting':",
+        sentence: "“This ancient royal scroll is _______ than the new book.”",
+        options: ["interestinger", "more interesting", "most interesting", "interesting"],
+        correctIndex: 1,
+        explanation: "For longer adjectives with three or more syllables like 'interesting', we use 'more + adjective' ('more interesting') to compare two items."
+      },
+      {
+        id: 10,
+        stage: 2,
+        stageTitle: "🏯 Stage 2: The Palace of Comparisons",
+        type: "True or False",
+        illustration: ILLUSTRATIONS.q10_trees,
+        caption: "Comparing Tree A and Tree B in the blossom courtyard.",
+        prompt: "True or False: When comparing ONLY TWO cherry blossom trees, it is correct to say “Tree B is the tallest of the two.”",
+        sentence: "“Look at Tree A and Tree B in the courtyard.”",
+        options: ["True", "False"],
+        isTwoCol: true,
+        correctIndex: 1,
+        explanation: "False! When comparing only TWO trees, we use the comparative '-er' form: 'Tree B is taller than Tree A.' We only use 'tallest' for three or more."
+      },
+
+      // ==================== STAGE 3: THE SWAN'S FINAL CHALLENGE ====================
+      {
+        id: 11,
+        stage: 3,
+        stageTitle: "👑 Stage 3: The Swan's Final Challenge",
+        type: "Picture-Based Question",
+        illustration: ILLUSTRATIONS.q11_crown,
+        caption: "Examine the tiny crown resting on the maroon cushion.",
+        prompt: "Which sentence uses the best adjectives to describe what you see in the picture?",
+        sentence: "“Look closely at the royal treasure on the cushion.”",
+        options: [
+          "A tiny golden crown rests on a soft maroon cushion.",
+          "A giant silver helmet sits on a hard wooden bench.",
+          "A broken plastic crown lies on cold white snow.",
+          "A dusty grey hat rests on a wet green leaf."
+        ],
+        correctIndex: 0,
+        explanation: "Well done! 'Tiny', 'golden', 'soft', and 'maroon' accurately describe the crown and velvet cushion in the picture."
+      },
+      {
+        id: 12,
+        stage: 3,
+        stageTitle: "👑 Stage 3: The Swan's Final Challenge",
+        type: "Correcting Adjective Usage",
+        illustration: ILLUSTRATIONS.q12_garden_moon,
+        caption: "The palace garden sparkles under the golden moonlight.",
+        prompt: "Spot the grammar mistake in the sentence below and choose the correct version:",
+        sentence: "Incorrect: “The palace garden looks more prettier under the golden moonlight.”",
+        options: [
+          "The palace garden looks prettier under the golden moonlight.",
+          "The palace garden looks prettiest under the golden moonlight.",
+          "The palace garden looks most prettier under the golden moonlight.",
+          "The palace garden looks prettyer under the golden moonlight."
+        ],
+        correctIndex: 0,
+        explanation: "Never use 'more' and '-er' together! 'Pretty' becomes 'prettier' (changing 'y' to 'i' + 'er')."
+      },
+      {
+        id: 13,
+        stage: 3,
+        stageTitle: "👑 Stage 3: The Swan's Final Challenge",
+        type: "Context & Meaning",
+        illustration: ILLUSTRATIONS.q13_tranquil_lake,
+        caption: "The lake water is completely still like a mirror at twilight.",
+        prompt: "Look at the calm, mirror-still water in the scene. Which adjective best fits the context?",
+        sentence: "“Without a single wave, the _______ lake reflected the glowing moon.”",
+        options: ["tranquil", "furious", "noisy", "stormy"],
+        correctIndex: 0,
+        explanation: "'Tranquil' means calm, quiet, and peaceful—the perfect adjective to describe still water reflecting the moon!"
+      },
+      {
+        id: 14,
+        stage: 3,
+        stageTitle: "👑 Stage 3: The Swan's Final Challenge",
+        type: "Adjectives in Short Text",
+        illustration: ILLUSTRATIONS.q14_passage_swan,
+        caption: "Pink petals drift gently around the royal swan.",
+        prompt: "Read the short passage and choose the option where BOTH words are adjectives:",
+        sentence: "“Beneath the blooming trees, gentle pink petals drifted onto the proud swan's feathers.”",
+        options: ["petals & drifted", "gentle & proud", "trees & feathers", "onto & beneath"],
+        correctIndex: 1,
+        explanation: "Both 'gentle' (describing the petals) and 'proud' (describing the swan) are adjectives! 'Petals' and 'trees' are nouns, and 'drifted' is a verb."
+      },
+      {
+        id: 15,
+        stage: 3,
+        stageTitle: "👑 Stage 3: The Swan's Final Challenge",
+        type: "Final Royal Riddle",
+        illustration: ILLUSTRATIONS.q15_finale,
+        caption: "The Perfect Swan awards the Crown of Adjective Mastery!",
+        prompt: "Complete the final royal proclamation using TWO adjectives:",
+        sentence: "“With wisdom and courage, the _______ pupil solved every riddle and earned the _______ crown!”",
+        options: [
+          "clever, royal",
+          "cleverly, royally",
+          "cleverness, royalty",
+          "clever, royally"
+        ],
+        correctIndex: 0,
+        explanation: "Bravo! 'Clever' describes the noun 'pupil' and 'royal' describes the noun 'crown'. Words ending in '-ly' like 'cleverly' are adverbs, not adjectives."
+      }
+    ];
+
+    /* ------------------------------------------------------------------------
+       3. APPLICATION STATE & LOCALSTORAGE PERSISTENCE
+       ------------------------------------------------------------------------ */
+    const STORAGE_KEY = "adjective_quest_swan_assessment_v1";
+
+    let state = {
+      pupilName: "",
+      currentIndex: 0,
+      userAnswers: new Array(QUESTIONS.length).fill(null), // stores selected option index or null
+      score: 0,
+      startTime: null,
+      elapsedSeconds: 0,
+      timerInterval: null
+    };
+
+    const ENCOURAGEMENTS_CORRECT = [
+      "Excellent! You're a Word Wizard! ✨",
+      "Wonderful! Keep going, Royal Explorer! 🦢",
+      "Brilliant thinking! The Palace Swan is impressed! 👑",
+      "Spectacular! True Adjective Mastery! 🌸"
+    ];
+
+    const ENCOURAGEMENTS_WRONG = [
+      "Almost there! Read the royal hint below and keep going! 🌸",
+      "Nice try! Every great explorer learns along the way! ✨",
+      "Keep going! Check the explanation below for the next challenge! 🦢"
+    ];
+
+    /* ------------------------------------------------------------------------
+       4. WEB AUDIO API: GENTLE CHINESE PENTATONIC MUSIC & SOUND EFFECTS
+       ------------------------------------------------------------------------ */
+    let audioCtx = null;
+    let isAudioOn = false;
+    let musicLoopTimer = null;
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+    }
+
+    // Play a soft plucked Guzheng/Harp note using Web Audio synthesis
+    function playPluckNote(freq, duration = 1.4, volume = 0.05) {
+      if (!isAudioOn || !audioCtx) return;
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const osc2 = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = "triangle";
+      osc2.type = "sine";
+      osc.frequency.setValueAtTime(freq, now);
+      osc2.frequency.setValueAtTime(freq * 2, now); // gentle octave harmonic
+
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(volume, now + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      osc.connect(gain);
+      osc2.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(now);
+      osc2.start(now);
+      osc.stop(now + duration);
+      osc2.stop(now + duration);
+    }
+
+    function startAmbientPentatonicLoop() {
+      // C Major Pentatonic frequencies (C4, D4, E4, G4, A4, C5, D5, E5)
+      const pentatonic = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25];
+      let step = 0;
+      const melodyPattern = [0, 2, 3, 5, 4, 3, 2, 1, 0, 3, 4, 5, 7, 5, 4, 3];
+
+      if (musicLoopTimer) clearInterval(musicLoopTimer);
+      musicLoopTimer = setInterval(() => {
+        if (!isAudioOn) return;
+        const noteFreq = pentatonic[melodyPattern[step % melodyPattern.length]];
+        playPluckNote(noteFreq, 1.8, 0.038);
+        step++;
+      }, 950);
+    }
+
+    function toggleAudio() {
+      isAudioOn = !isAudioOn;
+      const btn = document.getElementById("audio-btn");
+      const icon = document.getElementById("audio-icon");
+      const label = document.getElementById("audio-label");
+
+      if (isAudioOn) {
+        initAudioContext();
+        btn.classList.add("playing");
+        icon.textContent = "🎵";
+        label.textContent = "Palace Music: On";
+        playPluckNote(523.25, 1.0, 0.06);
+        startAmbientPentatonicLoop();
+      } else {
+        btn.classList.remove("playing");
+        icon.textContent = "🔇";
+        label.textContent = "Palace Music: Off";
+        if (musicLoopTimer) clearInterval(musicLoopTimer);
+      }
+    }
+
+    function playCorrectSfx() {
+      if (!isAudioOn) return;
+      initAudioContext();
+      playPluckNote(523.25, 0.7, 0.07); // C5
+      setTimeout(() => playPluckNote(659.25, 0.8, 0.07), 110); // E5
+      setTimeout(() => playPluckNote(783.99, 1.1, 0.08), 220); // G5
+    }
+
+    function playWrongSfx() {
+      if (!isAudioOn) return;
+      initAudioContext();
+      playPluckNote(329.63, 0.6, 0.05); // E4
+      setTimeout(() => playPluckNote(293.66, 0.8, 0.05), 160); // D4
+    }
+
+    /* ------------------------------------------------------------------------
+       5. FALLING CHERRY BLOSSOM PETALS & GOLDEN FIREFLIES CANVAS ANIMATION
+       ------------------------------------------------------------------------ */
+    function initAmbientCanvas() {
+      const canvas = document.getElementById("ambient-canvas");
+      const ctx = canvas.getContext("2d");
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener("resize", () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const petals = Array.from({ length: 28 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size: 5 + Math.random() * 6,
+        speedY: 0.45 + Math.random() * 0.75,
+        speedX: -0.3 + Math.random() * 0.8,
+        angle: Math.random() * Math.PI * 2,
+        spin: (Math.random() - 0.5) * 0.03,
+        color: Math.random() > 0.4 ? "rgba(255, 183, 197, 0.65)" : "rgba(255, 214, 224, 0.55)"
+      }));
+
+      const fireflies = Array.from({ length: 20 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: 1.5 + Math.random() * 2.2,
+        phase: Math.random() * Math.PI * 2,
+        speedY: -0.2 - Math.random() * 0.3
+      }));
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Draw falling cherry blossom petals
+        petals.forEach((p) => {
+          p.y += p.speedY;
+          p.x += p.speedX + Math.sin(p.angle) * 0.35;
+          p.angle += p.spin;
+
+          if (p.y > height + 15) {
+            p.y = -15;
+            p.x = Math.random() * width;
+          }
+          if (p.x > width + 15) p.x = -15;
+          if (p.x < -15) p.x = width + 15;
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.angle);
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        });
+
+        // Draw twinkling golden fireflies
+        fireflies.forEach((f) => {
+          f.y += f.speedY;
+          f.phase += 0.04;
+          if (f.y < -10) {
+            f.y = height + 10;
+            f.x = Math.random() * width;
+          }
+          const alpha = 0.25 + ((Math.sin(f.phase) + 1) / 2) * 0.65;
+          ctx.fillStyle = `rgba(247, 220, 111, ${alpha})`;
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    /* ------------------------------------------------------------------------
+       6. VIEW SWITCHING & NAVIGATION HANDLERS
+       ------------------------------------------------------------------------ */
+    function switchView(viewId) {
+      document.querySelectorAll(".view-section").forEach((sec) => sec.classList.remove("active"));
+      document.getElementById(viewId).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    let toastTimeout = null;
+    function handleNavClick(sectionName, description) {
+      const toast = document.getElementById("royal-toast");
+      document.getElementById("toast-title").textContent = `✨ ${sectionName} Section`;
+      document.getElementById("toast-body").textContent =
+        `${description} You are currently in the Royal Assessment Portal.`;
+      toast.classList.add("show");
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => toast.classList.remove("show"), 4200);
+    }
+
+    function returnToLanding() {
+      stopTimer();
+      loadSavedRecordBanner();
+      switchView("landing-view");
+    }
+
+    function startQuizDirectly() {
+      if (document.getElementById("quiz-view").classList.contains("active")) return;
+      beginAssessment();
+    }
+
+    /* ------------------------------------------------------------------------
+       7. QUIZ LIFECYCLE, TIMER & QUESTION RENDERING
+       ------------------------------------------------------------------------ */
+    function formatTime(totalSec) {
+      const mins = String(Math.floor(totalSec / 60)).padStart(2, "0");
+      const secs = String(totalSec % 60).padStart(2, "0");
+      return `${mins}:${secs}`;
+    }
+
+    function startTimer() {
+      stopTimer();
+      state.timerInterval = setInterval(() => {
+        state.elapsedSeconds++;
+        document.getElementById("hud-timer").textContent = formatTime(state.elapsedSeconds);
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (state.timerInterval) {
+        clearInterval(state.timerInterval);
+        state.timerInterval = null;
+      }
+    }
+
+    function beginAssessment() {
+      const inputVal = document.getElementById("pupil-name-input").value.trim();
+      state.pupilName = inputVal || "Word Explorer";
+      state.currentIndex = 0;
+      state.userAnswers = new Array(QUESTIONS.length).fill(null);
+      state.score = 0;
+      state.elapsedSeconds = 0;
+
+      document.getElementById("hud-timer").textContent = "00:00";
+      document.getElementById("review-panel").classList.remove("open");
+
+      switchView("quiz-view");
+      renderQuestion();
+      startTimer();
+    }
+
+    function renderQuestion() {
+      const q = QUESTIONS[state.currentIndex];
+      const answeredIdx = state.userAnswers[state.currentIndex];
+      const isAnswered = answeredIdx !== null;
+
+      // Update HUD
+      document.getElementById("hud-stage-badge").textContent = q.stageTitle;
+      document.getElementById("hud-q-num").textContent = q.id;
+      document.getElementById("hud-score").textContent = state.score;
+
+      const pct = ((state.currentIndex + 1) / QUESTIONS.length) * 100;
+      document.getElementById("progress-fill").style.width = `${pct}%`;
+      document.getElementById("progress-bar-aria").setAttribute("aria-valuenow", q.id);
+
+      // Show Stage Transition Banner at the start of Stage 1, 2, or 3
+      const banner = document.getElementById("stage-banner");
+      if (q.id === 1 || q.id === 6 || q.id === 11) {
+        const stageWelcome = {
+          1: "🌸 Welcome to Stage 1: The Garden of Descriptions! Spot the describing words.",
+          6: "🏯 You've entered Stage 2: The Palace of Comparisons! Master '-er', '-est', 'more' & 'most'.",
+          11: "👑 Final Stage 3: The Swan's Final Challenge! Prove your complete Adjective Mastery!"
+        };
+        banner.textContent = stageWelcome[q.id];
+        banner.style.display = "block";
+      } else {
+        banner.style.display = "none";
+      }
+
+      // Render Visual Scene & Caption
+      document.getElementById("question-illustration-box").innerHTML = q.illustration;
+      document.getElementById("question-visual-caption").textContent = q.caption;
+
+      // Render Text Prompts
+      document.getElementById("question-type-tag").textContent = q.type;
+      document.getElementById("question-prompt").textContent = `${q.id}. ${q.prompt}`;
+
+      const sentenceBox = document.getElementById("question-sentence-box");
+      if (q.sentence) {
+        sentenceBox.textContent = q.sentence;
+        sentenceBox.style.display = "block";
+      } else {
+        sentenceBox.style.display = "none";
+      }
+
+      // Render Options
+      const optionsContainer = document.getElementById("options-container");
+      optionsContainer.innerHTML = "";
+      optionsContainer.className = q.isTwoCol ? "options-grid two-col" : "options-grid";
+
+      const letters = ["A", "B", "C", "D"];
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-btn";
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${optText}</span>`;
+
+        if (isAnswered) {
+          btn.disabled = true;
+          if (idx === q.correctIndex) {
+            btn.classList.add("correct");
+          } else if (idx === answeredIdx) {
+            btn.classList.add("incorrect");
+          }
+        } else {
+          btn.onclick = () => selectAnswer(idx);
+        }
+
+        optionsContainer.appendChild(btn);
+      });
+
+      // Render Feedback Box if Already Answered
+      const feedbackBox = document.getElementById("feedback-box");
+      if (isAnswered) {
+        showFeedbackUI(answeredIdx === q.correctIndex, q.explanation);
+      } else {
+        feedbackBox.className = "feedback-box";
+      }
+
+      // Update Back & Next Buttons
+      document.getElementById("prev-btn").disabled = state.currentIndex === 0;
+      const nextBtn = document.getElementById("next-btn");
+      nextBtn.disabled = !isAnswered;
+      nextBtn.innerHTML =
+        state.currentIndex === QUESTIONS.length - 1
+          ? "Complete Quest & See Results 🏆"
+          : "Next Question →";
+    }
+
+    function selectAnswer(selectedIndex) {
+      // Prevent changing answers once submitted
+      if (state.userAnswers[state.currentIndex] !== null) return;
+
+      const q = QUESTIONS[state.currentIndex];
+      state.userAnswers[state.currentIndex] = selectedIndex;
+      const isCorrect = selectedIndex === q.correctIndex;
+
+      if (isCorrect) {
+        state.score += 10;
+        playCorrectSfx();
+      } else {
+        playWrongSfx();
+      }
+
+      document.getElementById("hud-score").textContent = state.score;
+
+      // Lock all buttons and apply visual styles
+      const optionBtns = document.querySelectorAll("#options-container .option-btn");
+      optionBtns.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.correctIndex) {
+          btn.classList.add("correct");
+        } else if (idx === selectedIndex && !isCorrect) {
+          btn.classList.add("incorrect");
+        }
+      });
+
+      showFeedbackUI(isCorrect, q.explanation);
+      document.getElementById("next-btn").disabled = false;
+    }
+
+    function showFeedbackUI(isCorrect, explanationText) {
+      const feedbackBox = document.getElementById("feedback-box");
+      const heading = document.getElementById("feedback-heading");
+      const explanation = document.getElementById("feedback-explanation");
+
+      feedbackBox.className = `feedback-box show ${isCorrect ? "is-correct" : "is-wrong"}`;
+      if (isCorrect) {
+        const msg = ENCOURAGEMENTS_CORRECT[state.currentIndex % ENCOURAGEMENTS_CORRECT.length];
+        heading.textContent = `✅ +10 Points! ${msg}`;
+      } else {
+        const msg = ENCOURAGEMENTS_WRONG[state.currentIndex % ENCOURAGEMENTS_WRONG.length];
+        heading.textContent = `💡 ${msg}`;
+      }
+      explanation.textContent = explanationText;
+    }
+
+    function prevQuestion() {
+      if (state.currentIndex > 0) {
+        state.currentIndex--;
+        renderQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (state.userAnswers[state.currentIndex] === null) return;
+      if (state.currentIndex < QUESTIONS.length - 1) {
+        state.currentIndex++;
+        renderQuestion();
+      } else {
+        finishAssessment();
+      }
+    }
+
+    /* ------------------------------------------------------------------------
+       8. ACHIEVEMENT TIERS, RESULTS PAGE & LOCALSTORAGE SAVING
+       ------------------------------------------------------------------------ */
+    function getAchievementData(score, name) {
+      if (score >= 135) {
+        return {
+          title: "Royal Adjective Master",
+          color: "#F7DC6F",
+          ribbon: "#C0392B",
+          message: `Extraordinary work, ${name}! You have mastered descriptive, comparative, and superlative adjectives with royal brilliance. The Crowned Swan salutes you!`
+        };
+      } else if (score >= 105) {
+        return {
+          title: "Golden Word Explorer",
+          color: "#F5B041",
+          ribbon: "#8E244D",
+          message: `Wonderful achievement, ${name}! You navigated the palace gardens and comparison halls with great skill. Just a tiny bit more practice for the top crown!`
+        };
+      } else if (score >= 75) {
+        return {
+          title: "Rising Word Wizard",
+          color: "#F48FB1",
+          ribbon: "#512E5F",
+          message: `Great effort, ${name}! You already know many helpful describing words. Review the scroll below and try again to climb even higher!`
+        };
+      } else {
+        return {
+          title: "Keep Practising, Little Explorer",
+          color: "#AED6F1",
+          ribbon: "#4A0E1E",
+          message: `Thank you for exploring the Palace, ${name}! Every great Word Wizard starts by practising. Check the explanations below and play again whenever you're ready!`
+        };
+      }
+    }
+
+    function buildBadgeSvg(tier) {
+      return `
+        <svg width="118" height="118" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M42 82 L32 114 L48 106 L60 116 L60 82 Z" fill="${tier.ribbon}" stroke="#F7DC6F" stroke-width="1.5"/>
+          <path d="M78 82 L88 114 L72 106 L60 116 L60 82 Z" fill="${tier.ribbon}" stroke="#F7DC6F" stroke-width="1.5"/>
+          <circle cx="60" cy="52" r="40" fill="#360816" stroke="${tier.color}" stroke-width="4"/>
+          <circle cx="60" cy="52" r="32" fill="none" stroke="#FFF8D6" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <!-- Crown Icon Inside Medallion -->
+          <path d="M40 62 L44 38 L53 49 L60 34 L67 49 L76 38 L80 62 Z" fill="${tier.color}" stroke="#8C6214" stroke-width="1.5"/>
+          <rect x="40" y="61" width="40" height="6" rx="2" fill="#FFF8D6"/>
+        </svg>`;
+    }
+
+    function finishAssessment() {
+      stopTimer();
+      if (isAudioOn) {
+        playPluckNote(523.25, 0.8, 0.08);
+        setTimeout(() => playPluckNote(659.25, 0.8, 0.08), 140);
+        setTimeout(() => playPluckNote(783.99, 0.9, 0.08), 280);
+        setTimeout(() => playPluckNote(1046.5, 1.4, 0.09), 420);
+      }
+
+      const correctCount = state.score / 10;
+      const incorrectCount = QUESTIONS.length - correctCount;
+      const percentage = Math.round((correctCount / QUESTIONS.length) * 100);
+      const timeFormatted = formatTime(state.elapsedSeconds);
+      const tier = getAchievementData(state.score, state.pupilName);
+
+      // Update Results UI
+      document.getElementById("results-main-heading").textContent =
+        `CONGRATULATIONS, ${state.pupilName.toUpperCase()}!`;
+      document.getElementById("achievement-badge-svg").innerHTML = buildBadgeSvg(tier);
+      document.getElementById("achievement-title").textContent = tier.title;
+      document.getElementById("final-score-num").textContent = state.score;
+      document.getElementById("stat-correct").textContent = correctCount;
+      document.getElementById("stat-incorrect").textContent = incorrectCount;
+      document.getElementById("stat-percent").textContent = `${percentage}%`;
+      document.getElementById("stat-time").textContent = timeFormatted;
+      document.getElementById("personal-feedback-msg").textContent = tier.message;
+
+      // Save result in localStorage so it persists after refresh
+      saveResultToStorage({
+        pupilName: state.pupilName,
+        score: state.score,
+        percentage,
+        achievement: tier.title,
+        timeTaken: timeFormatted,
+        date: new Date().toLocaleDateString()
+      });
+
+      buildReviewScroll();
+      switchView("results-view");
+    }
+
+    function buildReviewScroll() {
+      const listEl = document.getElementById("review-list");
+      listEl.innerHTML = "";
+
+      QUESTIONS.forEach((q, idx) => {
+        const chosenIdx = state.userAnswers[idx];
+        const isCorrect = chosenIdx === q.correctIndex;
+        const chosenText = chosenIdx !== null ? q.options[chosenIdx] : "Not answered";
+        const correctText = q.options[q.correctIndex];
+
+        const item = document.createElement("div");
+        item.className = `review-item ${isCorrect ? "rev-correct" : "rev-wrong"}`;
+        item.innerHTML = `
+          <div class="review-q-title">${isCorrect ? "✅" : "❌"} Question ${q.id}: ${q.prompt}</div>
+          <div class="review-meta">
+            <span><strong>Your Answer:</strong> <span style="color:${isCorrect ? "#82E0AA" : "#FFAB91"}">${chosenText}</span></span>
+            <span><strong>Correct Answer:</strong> <span style="color:#F7DC6F">${correctText}</span></span>
+          </div>
+          <div style="font-size:0.92rem; color:#E6D7C3;">💡 ${q.explanation}</div>
+        `;
+        listEl.appendChild(item);
+      });
+    }
+
+    function toggleReviewAnswers() {
+      const panel = document.getElementById("review-panel");
+      const btn = document.getElementById("toggle-review-btn");
+      const isOpen = panel.classList.toggle("open");
+      btn.textContent = isOpen ? "📜 Hide Answers" : "📜 Review Answers";
+      if (isOpen) {
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function playAgain() {
+      beginAssessment();
+    }
+
+    function saveResultToStorage(record) {
+      try {
+        const existingRaw = localStorage.getItem(STORAGE_KEY);
+        let bestScore = record.score;
+        if (existingRaw) {
+          const parsed = JSON.parse(existingRaw);
+          if (typeof parsed.bestScore === "number" && parsed.bestScore > bestScore) {
+            bestScore = parsed.bestScore;
+          }
+        }
+        const payload = {
+          ...record,
+          bestScore
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      } catch (e) {
+        // Ignore storage errors in restricted environments
+      }
+    }
+
+    function loadSavedRecordBanner() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        const banner = document.getElementById("saved-score-banner");
+        const input = document.getElementById("pupil-name-input");
+        if (!raw) {
+          banner.style.display = "none";
+          return;
+        }
+        const data = JSON.parse(raw);
+        if (data && data.pupilName) {
+          if (!input.value) input.value = data.pupilName;
+          banner.innerHTML = `👑 Welcome back, <strong>${data.pupilName}</strong>! Previous Score: <strong>${data.score}/150</strong> (${data.achievement}) • Personal Best: <strong>${data.bestScore}/150</strong>`;
+          banner.style.display = "block";
+        }
+      } catch (e) {
+        // Ignore storage read errors
+      }
+    }
+
+    // Initialize on Window Load
+    window.addEventListener("DOMContentLoaded", () => {
+      initAmbientCanvas();
+      loadSavedRecordBanner();
+    });
+  </script>
+</body>
+</html>
